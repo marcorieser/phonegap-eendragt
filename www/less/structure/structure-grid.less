@@ -1,0 +1,19 @@
+/* Grid
+/* -------------------------- */
+.container {
+    .make-container();
+}
+
+.row {
+    .make-row();
+}
+// Generates the basic structure for columns
+.make-grid-base();
+
+// Generates the columns
+.make-grid();
+
+// Grid in Grid
+.content {
+    .make-grid(@grid-content-columns);
+}

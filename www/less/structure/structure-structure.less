@@ -1,0 +1,357 @@
+// -------------------------------
+// Structure
+// -------------------------------
+//
+// Import Breakpoint Files
+// -------------------------------
+.isstatic(1) {
+    body {
+        min-width: @static-width + @grid-gutter-width;
+    }
+}
+
+.isstatic(@_) {
+    html {
+        -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    }
+    @-ms-viewport {
+        width: device-width;
+    }
+    @import "../xs";
+}
+
+.isstatic(0) {
+    @media screen and (min-width: @screen-phone) {
+        @import "../ty";
+    }
+
+    @media screen and (min-width: @screen-tablet) {
+        @import "../sm";
+    }
+
+    @media screen and (min-width: @screen-desktop) {
+        @import "../md";
+    }
+
+    @media screen and (min-width: @screen-lg-desktop) {
+        @import "../lg";
+    }
+}
+// Grid
+// -------------------------------
+.make-container() {
+    .container(@static, @adaptive);
+    .clearfix;
+}
+
+.container(@_, @_) {
+    margin-right: auto;
+    margin-left: auto;
+    padding-left: (@grid-gutter-width / 2);
+    padding-right: (@grid-gutter-width / 2);
+}
+
+.container(1,@_) {
+    width: @static-width + @grid-gutter-width;
+}
+
+.container(0,0) {
+    max-width: @responsive-max-width;
+}
+
+.container(0,1) {
+    @media (min-width: @screen-tablet) {
+        max-width: @container-tablet;
+    }
+    @media (min-width: @screen-desktop) {
+        max-width: @container-desktop;
+    }
+    @media (min-width: @screen-lg-desktop) {
+        max-width: @container-lg-desktop;
+    }
+}
+
+.make-row(@gutter: @grid-gutter-width) {
+    margin-left: (@gutter / -2);
+    margin-right: (@gutter / -2);
+    .clearfix;
+}
+
+.make-grid-base(@gutter: @grid-gutter-width) {
+    [class*="col-"] {
+        position: relative;
+        float: left;
+        min-height: 1px;
+        padding-left: (@gutter / 2);
+        padding-right: (@gutter / 2);
+    }
+}
+
+.make-grid(@grid-columns: @grid-columns) when (@grid-columns > 0) {
+    .grid(@static, @grid-columns);
+}
+
+.grid(@_, @grid-columns) {
+    .cols(@grid-columns, xs);
+}
+
+.grid(0, @grid-columns) {
+    @media (min-width: @screen-phone) {
+        .cols(@grid-columns, ty);
+    }
+
+    @media (min-width: @screen-tablet) {
+        .cols(@grid-columns, sm);
+    }
+
+    @media (min-width: @screen-desktop) {
+        .cols(@grid-columns, md);
+    }
+
+    @media (min-width: @screen-lg-desktop) {
+        .cols(@grid-columns, lg);
+    }
+}
+
+.cols(@index, @prefix, @grid-layout: @index) when (@index > -1) {
+    .col-@{prefix}-@{index} {
+        .make-column(@index, @grid-layout);
+    }
+    .col-@{prefix}-push-@{index} {
+        .push-column(@index, @grid-layout);
+    }
+    .col-@{prefix}-pull-@{index} {
+        .pull-column(@index, @grid-layout);
+    }
+    .col-@{prefix}-offset-@{index} {
+        .offset-column(@index, @grid-layout);
+    }
+    .cols(@index - 1, @prefix, @grid-layout);
+}
+
+.make-column(@column, @grid-columns) when (@column > 0) {
+    width: percentage((@column / @grid-columns));
+}
+
+.push-column(@column, @grid-columns) when (@column < @grid-columns) {
+    left: percentage((@column / @grid-columns));
+}
+
+.pull-column(@column, @grid-columns) when (@column < @grid-columns) {
+    right: percentage((@column / @grid-columns));
+}
+
+.offset-column(@column, @grid-columns) when (@column < @grid-columns) {
+    margin-left: percentage((@column / @grid-columns));
+}
+
+// Responsive Helper Classes
+// -------------------------------
+.make-responsivehelpers() when (@static = 0) and (@responsive-helpers = 1) {
+    /* Responsive Helper Classes */
+    .visible-xs-block,
+    .visible-xs-inline,
+    .visible-xs-inline-block,
+    .visible-sm-block,
+    .visible-sm-inline,
+    .visible-sm-inline-block,
+    .visible-md-block,
+    .visible-md-inline,
+    .visible-md-inline-block,
+    .visible-lg-block,
+    .visible-lg-inline,
+    .visible-lg-inline-block {
+        display: none !important;
+    }
+
+    .visible-xs {
+        @media (max-width: @screen-xs-max) {
+            .responsive-visibility();
+        }
+    }
+    .visible-xs-block {
+        @media (max-width: @screen-xs-max) {
+            display: block !important;
+        }
+    }
+    .visible-xs-inline {
+        @media (max-width: @screen-xs-max) {
+            display: inline !important;
+        }
+    }
+    .visible-xs-inline-block {
+        @media (max-width: @screen-xs-max) {
+            display: inline-block !important;
+        }
+    }
+
+    .visible-ty {
+        @media (min-width: @screen-ty) and (max-width: @screen-ty-max) {
+            .responsive-visibility();
+        }
+    }
+    .visible-ty-block {
+        @media (min-width: @screen-ty) and (max-width: @screen-ty-max) {
+            display: block !important;
+        }
+    }
+    .visible-ty-inline {
+        @media (min-width: @screen-ty) and (max-width: @screen-ty-max) {
+            display: inline !important;
+        }
+    }
+    .visible-ty-inline-block {
+        @media (min-width: @screen-ty) and (max-width: @screen-ty-max) {
+            display: inline-block !important;
+        }
+    }
+
+    .visible-sm {
+        @media (min-width: @screen-sm) and (max-width: @screen-sm-max) {
+            .responsive-visibility();
+        }
+    }
+    .visible-sm-block {
+        @media (min-width: @screen-sm) and (max-width: @screen-sm-max) {
+            display: block !important;
+        }
+    }
+    .visible-sm-inline {
+        @media (min-width: @screen-sm) and (max-width: @screen-sm-max) {
+            display: inline !important;
+        }
+    }
+    .visible-sm-inline-block {
+        @media (min-width: @screen-sm) and (max-width: @screen-sm-max) {
+            display: inline-block !important;
+        }
+    }
+
+    .visible-md {
+        @media (min-width: @screen-md) and (max-width: @screen-md-max) {
+            .responsive-visibility();
+        }
+    }
+    .visible-md-block {
+        @media (min-width: @screen-md) and (max-width: @screen-md-max) {
+            display: block !important;
+        }
+    }
+    .visible-md-inline {
+        @media (min-width: @screen-md) and (max-width: @screen-md-max) {
+            display: inline !important;
+        }
+    }
+    .visible-md-inline-block {
+        @media (min-width: @screen-md) and (max-width: @screen-md-max) {
+            display: inline-block !important;
+        }
+    }
+
+    .visible-lg {
+        @media (min-width: @screen-lg) {
+            .responsive-visibility();
+        }
+    }
+    .visible-lg-block {
+        @media (min-width: @screen-lg) {
+            display: block !important;
+        }
+    }
+    .visible-lg-inline {
+        @media (min-width: @screen-lg) {
+            display: inline !important;
+        }
+    }
+    .visible-lg-inline-block {
+        @media (min-width: @screen-lg) {
+            display: inline-block !important;
+        }
+    }
+
+    .hidden-xs {
+        @media (max-width: @screen-xs-max) {
+            .responsive-invisibility();
+        }
+    }
+    .hidden-ty {
+        @media (min-width: @screen-ty) and (max-width: @screen-ty-max) {
+            .responsive-invisibility();
+        }
+    }
+    .hidden-sm {
+        @media (min-width: @screen-sm) and (max-width: @screen-sm-max) {
+            .responsive-invisibility();
+        }
+    }
+    .hidden-md {
+        @media (min-width: @screen-md) and (max-width: @screen-md-max) {
+            .responsive-invisibility();
+        }
+    }
+    .hidden-lg {
+        @media (min-width: @screen-lg) {
+            .responsive-invisibility();
+        }
+    }
+}
+
+// Breakpoint Color Borders
+// -------------------------------
+.make-breakpointborders() when (@static = 0) and (@debug = 1) {
+    html {
+        padding-bottom: 20px;
+        &:after {
+            content: 'ERROR 204';
+            position: fixed;
+            height: 20px;
+            line-height: 20px;
+            color: white;
+            font-size: 15px;
+            background: black;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 999999;
+            opacity: 0.5;
+            text-align: center;
+            overflow: hidden;
+            pointer-events: none;
+            -webkit-pointer-events: none;
+        }
+    }
+    @media (min-width: @screen-phone-small) {
+        html:after {
+            background: #00793e;
+            content: 'XS';
+        }
+    }
+    @media screen and (min-width: @screen-phone) {
+        html:after {
+            background: saddlebrown;
+            content: 'TY';
+        }
+    }
+
+    @media screen and (min-width: @screen-tablet) {
+        html:after {
+            background: red;
+            content: 'SM';
+        }
+    }
+
+    @media screen and (min-width: @screen-desktop) {
+        html:after {
+            background: blue;
+            content: 'MD';
+        }
+    }
+
+    @media screen and (min-width: @screen-lg-desktop) {
+        html:after {
+            background: yellow;
+            content: 'LG';
+            color: black;
+        }
+    }
+}
