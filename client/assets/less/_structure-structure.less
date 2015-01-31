@@ -17,26 +17,8 @@
     @-ms-viewport {
         width: device-width;
     }
-    @import "../xs";
 }
 
-.isstatic(0) {
-    @media screen and (min-width: @screen-phone) {
-        @import "../ty";
-    }
-
-    @media screen and (min-width: @screen-tablet) {
-        @import "../sm";
-    }
-
-    @media screen and (min-width: @screen-desktop) {
-        @import "../md";
-    }
-
-    @media screen and (min-width: @screen-lg-desktop) {
-        @import "../lg";
-    }
-}
 // Grid
 // -------------------------------
 .make-container() {

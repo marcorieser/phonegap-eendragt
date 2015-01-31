@@ -1,4 +1,10 @@
 .idea
-platforms/
+.tscache
+.baseDir.ts
+atlassian-ide-plugin.xml
+client/vendor/
+node_modules
+/build/
+/www/
 plugins/
-www/css/
+platforms/

@@ -1,0 +1,14 @@
+{
+    "name": "phonegap-eendragt",
+    "version": "0.0.1",
+    "moduleType": [
+        "amd"
+    ],
+    "dependencies": {
+    },
+    "devDependencies": {
+        "angular": "1.3.11",
+        "angular-route": "1.3.11",
+        "ngCordova": "0.1.12-alpha"
+    }
+}
