@@ -470,7 +470,7 @@ module.exports = function (grunt) {
                 files: [
                     '<%= app_files.ts %>'
                 ],
-                tasks: [ 'ts:compile', 'jshint:test' ]
+                tasks: [ 'ts:compile' ]
             }
         }
     };

@@ -19,6 +19,8 @@ Commands
 
 grunt watch
 
+http://localhost:63342/eendragt/build/
+
 # Production
 
 grunt

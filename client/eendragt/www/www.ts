@@ -1,8 +1,11 @@
-module eendragt {
+module eendragt.www {
     angular.module('eendragt.www', [
-            'templates-app',
-            'ngRoute'
-        ])
+        'templates-app',
+        'ngRoute',
+        //'ngAnimate',
+        'eendragt.instructions',
+        'eendragt.game'
+    ])
 
         .config(function ($locationProvider, $routeProvider) {
             $locationProvider.html5Mode(false).hashPrefix('!');
@@ -13,6 +16,7 @@ module eendragt {
             }).otherwise({redirectTo: '/'});
         })
 
-        .controller('eendragt.www.index', function () {
+        .controller('eendragt.www.index', function ($scope) {
+            $scope.$root.controllerName = 'eendragt.www.index';
         });
 }
