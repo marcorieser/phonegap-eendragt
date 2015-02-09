@@ -11,6 +11,6 @@ module eendragt.instructions {
         })
 
         .controller('eendragt.instructions.index', function ($scope) {
-            $scope.$root.controllerName = 'eendragt.instructions.index';
+            $scope.$root.controllerName = 'eendragt-instructions-index';
         });
 }

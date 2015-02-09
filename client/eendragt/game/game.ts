@@ -11,6 +11,17 @@ module eendragt.game {
         })
 
         .controller('eendragt.game.index', function ($scope) {
-            $scope.$root.controllerName = 'eendragt.game.index';
+            $scope.$root.controllerName = 'eendragt-game-index';
+        })
+
+        .directive('gameMap', function () {
+
+            return {
+                restrict: 'E',
+                scope: {
+                    'fields': '='
+                },
+                templateUrl: 'eendragt/game/game-map.html'
+            };
         });
 }

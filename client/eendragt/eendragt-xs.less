@@ -1,0 +1,98 @@
+html {
+    height: 100%;
+}
+
+body {
+    -webkit-touch-callout: none;
+    -webkit-text-size-adjust: none;
+    -webkit-user-select: none;
+    -webkit-font-smoothing: antialiased;
+    background: @color-white;
+    height: 100%;
+    font-family: @font-basic;
+    font-size: 12px;
+    line-height: 1.2em;
+    color: @color-gray;
+}
+
+.main-wrapper {
+    position: relative;
+    min-height: 100%;
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
+
+//    &.ng-enter {
+//        .transition(1s linear all);
+//        opacity: 0;
+//
+//        &.ng-enter-active {
+//            opacity: 1;
+//        }
+//    }
+//
+//    &.ng-leave {
+//        .transition(1s linear all);
+//        opacity: 1;
+//
+//        &.ng-leave-active {
+//            opacity: 0;
+//        }
+//    }
+}
+h1 {
+    font-family: @font-headline;
+    font-size: 90px;
+    line-height: 1.2em;
+    color: @color-gray;
+    position: absolute;
+    top: 42%;
+    left: 50%;
+    .translate(-50%, -50%);
+    .text-shadow(0px 0px 30px rgba(255, 255, 255, 0.7))
+}
+
+a {
+    &,
+    &:visited,
+    &:link,
+    &:hover,
+    &:active,
+    &:focus {
+        color: @color-gray;
+    }
+}
+
+ul.nav {
+
+    &:after {
+        content: '';
+        display: inline-block;
+        position: relative;
+        width: 20%;
+        height: 0;
+    }
+}
+
+.plank {
+    display: block;
+    float: left;
+    width: 45%;
+    margin: 0 2.5%;
+
+    a {
+        background: @color-brown;
+        height: 50px;
+        color: @color-white;
+        display: block;
+        line-height: 50px;
+        text-align: center;
+        font-size: 20px;
+    }
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}

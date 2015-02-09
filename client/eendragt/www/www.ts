@@ -1,14 +1,9 @@
 module eendragt.www {
     angular.module('eendragt.www', [
-        'templates-app',
-        'ngRoute',
-        //'ngAnimate',
-        'eendragt.instructions',
-        'eendragt.game'
+        'ngRoute'
     ])
 
-        .config(function ($locationProvider, $routeProvider) {
-            $locationProvider.html5Mode(false).hashPrefix('!');
+        .config(function ($routeProvider) {
 
             $routeProvider.when('/', {
                 controller: 'eendragt.www.index',
@@ -17,6 +12,6 @@ module eendragt.www {
         })
 
         .controller('eendragt.www.index', function ($scope) {
-            $scope.$root.controllerName = 'eendragt.www.index';
+            $scope.$root.controllerName = 'eendragt-www-index';
         });
 }
