@@ -1,9 +1,9 @@
 angular.module('eendragt.game.services.game', [])
-    .factory('Game', function (Ship) {
+    .factory('Game', function () {
         return {
             start: function (x, y) {
                 var game = {
-                    uuid:    '1234',
+                    uuid:    Math.random().toString(9).substring(2, 12),
                     ships:   [],
                     x:       x,
                     y:       y,

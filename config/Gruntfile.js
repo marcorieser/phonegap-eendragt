@@ -13,6 +13,7 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-contrib-less');
     grunt.loadNpmTasks('grunt-ng-annotate');
     grunt.loadNpmTasks('grunt-html2js');
+    grunt.loadNpmTasks('grunt-open');
 
     /**
      * Load in our build configuration file.
@@ -41,6 +42,13 @@ module.exports = function (grunt) {
                     ' *\n' +
                     ' * Copyright (c) <%= grunt.template.today("yyyy") %> <%= pkg.author %>\n' +
             ' */\n'
+        },
+
+        open: {
+            dev: {
+                path: 'http://localhost:63342/eendragt/build',
+                app:  'Google Chrome'
+            }
         },
 
         /**
@@ -459,7 +467,7 @@ module.exports = function (grunt) {
      * before watching for changes.
      */
     grunt.renameTask('watch', 'delta');
-    grunt.registerTask('watch', [ 'build', 'delta' ]);
+    grunt.registerTask('watch', [ 'build', 'open:dev', 'delta' ]);
 
     /**
      * The default task is to build and compile.

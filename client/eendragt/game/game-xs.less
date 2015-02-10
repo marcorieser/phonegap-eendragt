@@ -5,27 +5,40 @@ map {
     width: 9 * @size;
     height: 9 * @size;
     margin: 20px auto;
-}
 
-field {
-    display: block;
-    width: @size;
-    height: @size;
-    border-right: 1px solid black;
-    border-bottom: 1px solid black;
-    float: left;
-
-    &:nth-child(-n+9) {
-        border-top: 1px solid black;
+    .clearfix {
+        &:first-of-type field {
+            border-top: 1px solid black;
+        }
     }
 
-    &:nth-child(9n+1) {
+    field {
+        display: block;
+        width: @size;
+        height: @size;
         border-left: 1px solid black;
+        border-bottom: 1px solid black;
+        float: left;
+        position: relative;
+
+        &:last-child {
+            border-right: 1px solid black;
+        }
+        
+        > div {
+            height: 100%;
+        }
     }
 }
+
 ship {
     div {
-        height: 20px;
+        color: @color-white;
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 100%;
+        width: 100%;
         background: grey;
         &.hit {
             background: red;

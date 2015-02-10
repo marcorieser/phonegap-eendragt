@@ -1,16 +1,27 @@
 angular.module('eendragt.game.services.ship', [])
     .factory('Ship', function () {
         return {
-            createShip: function (x, y) {
+            createShip: function (x, y, length, direction) {
+                var setPositions = function () {
+                    var positions = [];
+
+                    for (var i = 0; i < length; i++) {
+                        if (direction === 'h') {
+                            positions.push({ x: x + i, y: y, hit: false });
+                        } else {
+                            positions.push({ x: x, y: y + i, hit: false });
+                        }
+                    }
+                    return positions;
+                };
+
+                x = window.parseInt(x, 10);
+                y = window.parseInt(y, 10);
+                length = window.parseInt(length, 10);
+
                 return {
                     name:      'Destroyer',
-                    positions: [
-                        {
-                            x:   x,
-                            y:   y,
-                            hit: true
-                        }
-                    ],
+                    positions: setPositions(),
                     destroyed: false,
 
                     getPosition: function (x, y) {
@@ -55,12 +66,15 @@ angular.module('eendragt.game.services.ship', [])
                         this.destroyed = $destroyed;
 
                         return $destroyed;
+                    },
+
+                    getName: function () {
+                        return this.name;
                     }
                 };
             },
             getShip:    function (ships, x, y) {
                 var returnShip;
-
                 angular.forEach(ships, function (ship) {
                     if (ship.isOnPosition(x, y)) {
                         returnShip = ship;
