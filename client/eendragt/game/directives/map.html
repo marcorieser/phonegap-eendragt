@@ -1,0 +1,6 @@
+<div class="eendragt-game-map">
+    <h1>UUID: {{game.uuid}}</h1>
+    <div class="row" ng-repeat="(y, rows) in fields">
+        <field x="x" y="y" ship="content.ship" ng-repeat="(x, content) in rows"/>
+    </div>
+</div>

@@ -63,6 +63,7 @@ module.exports = {
      */
     vendor_files: {
         js: [
+            '<%= src_dir %>/vendor/jquery/dist/jquery.js',
             '<%= src_dir %>/vendor/angular/angular.js',
             '<%= src_dir %>/vendor/angular-route/angular-route.js',
             '<%= src_dir %>/vendor/angular-animate/angular-animate.js',
