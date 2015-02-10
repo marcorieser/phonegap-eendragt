@@ -3,18 +3,18 @@ angular.module('eendragt.game.services.ship', [])
         return {
             createShip: function (x, y) {
                 return {
-                    name: 'Destroyer',
+                    name:      'Destroyer',
                     positions: [
                         {
-                            x: x,
-                            y: y,
+                            x:   x,
+                            y:   y,
                             hit: true
                         }
                     ],
                     destroyed: false,
+
                     getPosition: function (x, y) {
                         var $value;
-
 
                         angular.forEach(this.positions, function (position) {
                             if ($value !== undefined) {
@@ -34,12 +34,31 @@ angular.module('eendragt.game.services.ship', [])
 
                         return $value;
                     },
+
                     isOnPosition: function (x, y) {
                         return this.getPosition(x, y) !== undefined;
+                    },
+
+                    isDestroyed: function () {
+                        $destroyed = true;
+
+                        angular.forEach(this.positions, function (position) {
+                            if ($destroyed === false) {
+                                return;
+                            }
+
+                            if (position.hit === false) {
+                                $destroyed = false;
+                            }
+                        });
+
+                        this.destroyed = $destroyed;
+
+                        return $destroyed;
                     }
                 };
             },
-            getShip: function (ships, x, y) {
+            getShip:    function (ships, x, y) {
                 var returnShip;
 
                 angular.forEach(ships, function (ship) {

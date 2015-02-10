@@ -1,2 +1,1 @@
-<span ng-if="ship.getPosition(x, y).hit">X</span>
-<span ng-if="ship.destroyed">O</span>
+<div ng-class="{hit:ship.getPosition(x, y).hit, destroyed: ship.isDestroyed()}"></div>

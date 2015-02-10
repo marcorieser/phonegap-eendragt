@@ -13,5 +13,5 @@ angular.module('eendragt.game', [
 
     .controller('eendragt.game.index', function ($scope, Game) {
         $scope.$root.controllerName = 'eendragt-game-index';
-        $scope.game = Game.start();
+        $scope.game = Game.start(9, 9);
     });
