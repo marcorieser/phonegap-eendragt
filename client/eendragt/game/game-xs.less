@@ -1,0 +1,47 @@
+@size: 50px;
+
+map {
+    display: block;
+    width: 9 * @size;
+    height: 9 * @size;
+    margin: 20px auto;
+}
+
+field {
+    display: block;
+    width: @size;
+    height: @size;
+    border-right: 1px solid black;
+    border-bottom: 1px solid black;
+    float: left;
+
+    &:nth-child(-n+9) {
+        border-top: 1px solid black;
+    }
+
+    &:nth-child(9n+1) {
+        border-left: 1px solid black;
+    }
+}
+
+ship {
+    height: @size;
+    display: block;
+
+    &[data-length="2"] {
+        background: red;
+        width: @size * 2;
+    }
+    &[data-length="3"] {
+        background: blue;
+        width: @size * 3;
+    }
+    &[data-length="4"] {
+        background: green;
+        width: @size * 4;
+    }
+    &[data-length="5"] {
+        background: yellow;
+        width: @size * 5;
+    }
+}

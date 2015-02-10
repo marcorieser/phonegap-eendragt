@@ -3,15 +3,13 @@ phonegap-eendragt
 
 Installation
 ------------
-npm install -g grunt-cli bower tsd
+npm install -g grunt-cli bower
 
 cd config
 
 npm install
 
 bower install
-
-tsd reinstall
 
 Commands
 --------

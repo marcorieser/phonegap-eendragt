@@ -13,7 +13,6 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-contrib-less');
     grunt.loadNpmTasks('grunt-ng-annotate');
     grunt.loadNpmTasks('grunt-html2js');
-    grunt.loadNpmTasks('grunt-ts');
 
     /**
      * Load in our build configuration file.
@@ -263,21 +262,6 @@ module.exports = function (grunt) {
         },
 
         /**
-         * TypeScript configuration
-         */
-        ts: {
-            compile: {
-                src:    '<%= app_files.ts %>',
-                outDir: '<%= build_dir %>/client',
-
-                options: {
-                    // true (default) | false
-                    sourceMap: false
-                }
-            }
-        },
-
-        /**
          * Minify the sources!
          */
         uglify: {
@@ -461,16 +445,6 @@ module.exports = function (grunt) {
             less: {
                 files: [ '<%= src_dir %>/**/*.less' ],
                 tasks: [ 'concat:lessstructure', 'concat:lessxs', 'concat:lessty', 'concat:lesssm', 'concat:lessmd', 'concat:lesslg', 'concat:breakpoints', 'concat:less', 'less:build' ]
-            },
-
-            /**
-             * TypeScript configuration
-             */
-            ts: {
-                files: [
-                    '<%= app_files.ts %>'
-                ],
-                tasks: [ 'ts:compile' ]
             }
         }
     };
@@ -496,7 +470,7 @@ module.exports = function (grunt) {
      * The `build` task gets your app ready to run for development and testing.
      */
     grunt.registerTask('build', [
-        'clean', 'html2js', 'ts:compile', 'jshint', 'concat:lessstructure', 'concat:lessxs', 'concat:lessty', 'concat:lesssm', 'concat:lessmd', 'concat:lesslg', 'concat:breakpoints', 'concat:less',
+        'clean', 'html2js', 'jshint', 'concat:lessstructure', 'concat:lessxs', 'concat:lessty', 'concat:lesssm', 'concat:lessmd', 'concat:lesslg', 'concat:breakpoints', 'concat:less',
         'less:build',
         'concat:build_css', 'copy:build_app_assets', 'copy:build_vendor_assets',
         'copy:build_appjs', 'concat:build_vendor', 'index:build'
