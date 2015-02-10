@@ -10,7 +10,7 @@ angular.module('eendragt.game.directives.field', [])
             'restrict':    'E',
             link:          function ($scope) {
                 $scope.showme = function () {
-
+                    $scope.ship.hit($scope.x, $scope.y);
                 };
             }
         };
