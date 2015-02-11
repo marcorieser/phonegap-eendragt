@@ -1,5 +1,5 @@
 angular.module('eendragt.game.directives.control', [])
-    .directive('control', function (Ship) {
+    .directive('control', function (Ship, Config) {
         return {
             'scope':       {
                 game: '='
@@ -10,11 +10,9 @@ angular.module('eendragt.game.directives.control', [])
                 $scope.direction = 'h';
 
                 $scope.create = function () {
-                    $scope.game.addShip(Ship.createShip($scope.x, $scope.y, $scope.length, $scope.direction));
+                    $scope.game.addShip(Ship.create($scope.x, $scope.y, $scope.length, $scope.direction));
                     console.log($scope.x, $scope.y);
                 };
-
-                $scope.game.addShip(Ship.createShip(1, 1, 4, 'v'));
             }
         };
     });

@@ -11,7 +11,8 @@ angular.module('eendragt.game', [
         });
     })
 
-    .controller('eendragt.game.index', function ($scope, Game) {
+    .controller('eendragt.game.index', function ($scope, Game, Config) {
         $scope.$root.controllerName = 'eendragt-game-index';
-        $scope.game = Game.start(9, 9);
+        $scope.game = Game.start(Config.fields.x, Config.fields.y);
+        $scope.game.placeShipsRandomly(Config.ships);
     });
