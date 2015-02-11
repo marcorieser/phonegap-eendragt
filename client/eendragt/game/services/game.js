@@ -14,14 +14,9 @@ angular.module('eendragt.game.services.game', [])
                 return field;
             },
             getRandomCoord = function (size, length) {
-                var p = -1,
-                    rdm;
-                while (p === -1) {
-                    rdm = Math.floor(Math.random() * 10);
-                    if (rdm + length <= size) {
-                        p = rdm;
-                    }
-                }
+                var max = size - length + 1,
+                    rdm = (~~(Math.random() * max)),
+                    p = rdm;
                 return p;
             };
 
@@ -48,15 +43,21 @@ angular.module('eendragt.game.services.game', [])
                                 y,
                                 direction,
                                 size,
-                                errors = 0;
+                                errors;
                             hasSpace = false;
                             while (!hasSpace) {
+                                errors = 0;
                                 var i,
                                     field;
                                 direction = Math.random() > 0.5 ? 'h' : 'v';
-                                size = direction === 'h' ? self.x : self.y;
-                                x = getRandomCoord(size, ship.elements);
-                                y = getRandomCoord(size, ship.elements);
+
+                                if (direction === 'h') {
+                                    x = getRandomCoord(self.x, ship.elements);
+                                    y = getRandomCoord(self.y, 1);
+                                } else {
+                                    x = getRandomCoord(self.x, 1);
+                                    y = getRandomCoord(self.y, ship.elements);
+                                }
 
                                 for (i = 0; i < ship.elements; i++) {
                                     if (direction === 'h') {
@@ -65,10 +66,10 @@ angular.module('eendragt.game.services.game', [])
                                         field = self.getField(x, y + i);
                                     }
 
-                                    errors = field.status ? errors : errors++;
+                                    if (field.status === false) {
+                                        errors++;
+                                    }
                                 }
-
-                                console.log(errors);
 
                                 hasSpace = errors === 0;
 
@@ -84,7 +85,6 @@ angular.module('eendragt.game.services.game', [])
                                 }
                             }
                             self.addShip(Ship.create(x, y, ship.elements, direction, ship.name));
-
                         });
                     }
                 };

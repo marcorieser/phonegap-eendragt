@@ -21,6 +21,7 @@ angular.module('eendragt.game.services.ship', [])
 
                 return {
                     name: name,
+                    direction: direction,
                     positions: setPositions(),
                     destroyed: false,
 

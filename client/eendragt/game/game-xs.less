@@ -1,50 +1,82 @@
 @size: 80px;
-
+@amount: 9;
 map {
     display: block;
-    width: 9 * @size;
-    height: 9 * @size;
+    width: @amount * @size;
+    height: @amount * @size;
     margin: 20px auto;
 
     .clearfix {
-        &:first-of-type field {
-            border-top: 1px solid black;
-        }
-    }
+        field {
+            display: block;
+            width: @size;
+            height: @size;
+            background: #8ce5fc;
+            float: left;
+            position: relative;
+            &:nth-child(even) {
+                background: #d3f6ff;
+            }
 
-    field {
-        display: block;
-        width: @size;
-        height: @size;
-        border-left: 1px solid black;
-        border-bottom: 1px solid black;
-        float: left;
-        position: relative;
+            > div {
+                height: 100%;
 
-        &:last-child {
-            border-right: 1px solid black;
+                &.clicked {
+                    background: gray;
+                }
+            }
         }
-        
-        > div {
-            height: 100%;
+        &:nth-child(even) {
+            field {
+                background: #8ce5fc;
+
+                &:nth-child(odd) {
+                    background: #d3f6ff;
+                }
+            }
         }
     }
 }
 
 ship {
     div {
+        font-size: 14px;
         color: @color-white;
         position: absolute;
         left: 0;
         top: 0;
         height: 100%;
         width: 100%;
-        background: grey;
+
+        &.terror {
+            background: #004c1d;
+        }
+        &.horror {
+            background: #00424c;
+        }
+        &.mckinsey {
+            background: #00204c;
+        }
+        &.torpedo {
+            background: #22004c;
+        }
+        &.dropplet {
+            background: #4c0029;
+        }
+
         &.hit {
-            background: red;
+            &:before {
+                content: '/';
+                font-size: 80px;
+                line-height: 80px;
+                display: block;
+                text-align: center;
+            }
         }
         &.destroyed {
-            background: black;
+            &:before {
+                content: 'X';
+            }
         }
     }
 }

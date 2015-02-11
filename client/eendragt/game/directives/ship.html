@@ -1,3 +1,2 @@
-<div ng-class="{hit:ship.getPosition(x, y).hit, destroyed: ship.isDestroyed()}">
-    {{ship.name}}
+<div ng-class="{hit:ship.getPosition(x, y).hit, destroyed: ship.isDestroyed()}" class="{{ship.name | lowercase}}">
 </div>
