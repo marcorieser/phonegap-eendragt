@@ -1,16 +1,28 @@
-@size: 80px;
 @amount: 9;
 map {
     display: block;
-    width: @amount * @size;
-    height: @amount * @size;
+    max-width: 90%;
     margin: 20px auto;
-
+    position: relative;
+    &:before {
+        content: '';
+        display: block;
+        height: 0;
+        padding-top: 100%;
+    }
+    .eendragt-game-map {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
     .clearfix {
+        height: percentage(1/@amount);
         field {
             display: block;
-            width: @size;
-            height: @size;
+            width: percentage(1/@amount);
+            height: 100%;
             background: #8ce5fc;
             float: left;
             position: relative;
@@ -21,7 +33,7 @@ map {
             > div {
                 height: 100%;
 
-                &.clicked {
+                &.opened {
                     background: gray;
                 }
             }
@@ -40,8 +52,6 @@ map {
 
 ship {
     div {
-        font-size: 14px;
-        color: @color-white;
         position: absolute;
         left: 0;
         top: 0;
@@ -57,18 +67,16 @@ ship {
         &.mckinsey {
             background: #00204c;
         }
-        &.torpedo {
-            background: #22004c;
-        }
         &.dropplet {
             background: #4c0029;
         }
 
         &.hit {
             &:before {
+                color: @color-white;
                 content: '/';
-                font-size: 80px;
-                line-height: 80px;
+                font-size: 60px;
+                line-height: 60px;
                 display: block;
                 text-align: center;
             }
@@ -80,3 +88,45 @@ ship {
         }
     }
 }
+
+//map {
+//    -webkit-transform: rotateX(60deg) rotateZ(45deg);
+//    -webkit-transform-style: preserve-3d;
+//}
+
+//
+//ship > div,
+//ship > div:after,
+//ship > div:before {
+//    content: '';
+//    position: absolute;
+//    float: left;
+//    height: 100%;
+//    width: 100%;
+//}
+//
+//ship > div {
+//    background-color: #f66;
+//    position: relative;
+//    -webkit-transform: translateZ(20px);
+//    -webkit-transform-style: preserve-3d;
+//    -webkit-transition: .25s;
+//}
+//
+//ship > div:after {
+//    left: 0;
+//    top: 71%;
+//    height: 20px;
+//    background: inherit;
+//    -webkit-transform: rotateX(-90deg) translateY(20px);
+//    -webkit-transform-origin: 100% 100%;
+//}
+//
+//ship > div:before {
+//    left: 21%;
+//    top: 0;
+//    height: 20px;
+//    background: inherit;
+//    -webkit-transform: rotateY(90deg) rotateZ(-90deg) translateX(5px);
+//    -webkit-transform-origin: 100% 100%;
+//}

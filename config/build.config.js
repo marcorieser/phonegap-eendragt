@@ -10,6 +10,7 @@ module.exports = {
     src_dir: '../client',
     build_dir: '../build',
     compile_dir: '../www',
+    port: '63342',
 
     /**
      * This is a collection of file patterns that refer to our app code (the

@@ -9,8 +9,13 @@ angular.module('config', [])
             ships:  [
                 { name: 'Terror', elements: 5 },
                 { name: 'Horror', elements: 4 },
+                { name: 'Horror', elements: 4 },
                 { name: 'McKinsey', elements: 3 },
-                { name: 'Torpedo', elements: 2 },
+                { name: 'McKinsey', elements: 3 },
+                { name: 'McKinsey', elements: 3 },
+                { name: 'Dropplet', elements: 2 },
+                { name: 'Dropplet', elements: 2 },
+                { name: 'Dropplet', elements: 2 },
                 { name: 'Dropplet', elements: 2 }
             ]
         };

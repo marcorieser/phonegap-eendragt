@@ -46,7 +46,7 @@ module.exports = function (grunt) {
 
         open: {
             dev: {
-                path: 'http://localhost:63342/eendragt/build',
+                path: 'http://localhost:<%= port %>/eendragt/build',
                 app:  'Google Chrome'
             }
         },

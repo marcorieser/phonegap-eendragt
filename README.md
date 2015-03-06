@@ -17,16 +17,14 @@ Commands
 
 grunt watch
 
-http://localhost:63342/eendragt/build/
-
 # Production
 
 grunt
 
-Plugins
--------------
-# Remove
+Plugins for the native functions on devices (not browser)
+--------------------------------------------------------
+# Remove plugins
 cordova plugin remove org.apache.cordova.statusbar
 
-# Add
+# Add plugins
 cordova plugin add org.apache.cordova.statusbar

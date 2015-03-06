@@ -9,11 +9,12 @@ angular.module('eendragt.game.directives.field', [])
             'templateUrl': 'eendragt/game/directives/field.html',
             'restrict':    'E',
             link:          function ($scope) {
+                $scope.status = 'covered';
                 $scope.guess = function () {
                     if($scope.ship) {
                         $scope.ship.hit($scope.x, $scope.y);
                     }
-                    $scope.clicked = true;
+                    $scope.status = 'opened';
                 };
             }
         };
