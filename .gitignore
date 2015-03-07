@@ -1,6 +1,4 @@
 .idea
-.tscache
-.baseDir.ts
 atlassian-ide-plugin.xml
 client/vendor/
 node_modules
@@ -8,4 +6,3 @@ node_modules
 /www/
 plugins/
 platforms/
-tscommand-*
