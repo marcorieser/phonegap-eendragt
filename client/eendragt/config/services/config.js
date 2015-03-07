@@ -1,4 +1,4 @@
-angular.module('config', [])
+angular.module('eendragt.config.services.config', [])
 
     .factory('Config', function () {
         var config = {

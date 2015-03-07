@@ -1,5 +1,5 @@
 angular.module('eendragt', [
-    'config',
+    'eendragt.config',
     'templates-app',
     'ngRoute',
     'ngAnimate',
