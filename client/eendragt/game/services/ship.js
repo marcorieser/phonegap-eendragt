@@ -20,7 +20,7 @@ angular.module('eendragt.game.services.ship', [])
                 elements = window.parseInt(elements, 10);
 
                 return {
-                    name: name,
+                    name:      name,
                     direction: direction,
                     positions: setPositions(),
                     destroyed: false,
@@ -68,8 +68,7 @@ angular.module('eendragt.game.services.ship', [])
 
                         return $destroyed;
                     },
-
-                    hit: function (x, y) {
+                    hit:         function (x, y) {
                         var position = this.getPosition(x, y);
                         if (position !== undefined) {
                             position.hit = true;

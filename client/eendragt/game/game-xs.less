@@ -75,12 +75,15 @@
 
             &.hit {
                 &:before {
-                    color: @color-white;
                     content: '/';
+                    color: @color-white;
                     font-size: 60px;
-                    line-height: 60px;
                     display: block;
                     text-align: center;
+                    width: 100%;
+                    position: absolute;
+                    left: 0;
+                    .vertical-center;
                 }
             }
             &.destroyed {

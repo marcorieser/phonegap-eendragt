@@ -7,8 +7,6 @@ angular.module('eendragt.game.directives.ship', [])
                 'y': '='
             },
             'templateUrl': 'eendragt/game/directives/ship.html',
-            'restrict': 'E',
-            link: function($scope) {
-            }
+            'restrict': 'E'
         };
     });
