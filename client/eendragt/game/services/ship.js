@@ -8,9 +8,9 @@ angular.module('eendragt.game.services.ship', [])
 
                         for (var i = 0; i < elements; i++) {
                             if (direction === 'h') {
-                                positions.push({ x: x + i, y: y, hit: false });
+                                positions.push({ id: i, x: x + i, y: y, hit: false });
                             } else {
-                                positions.push({ x: x, y: y + i, hit: false });
+                                positions.push({ id: i, x: x, y: y + i, hit: false });
                             }
                         }
                         return positions;
