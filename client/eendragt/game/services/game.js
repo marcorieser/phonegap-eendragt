@@ -4,7 +4,13 @@ angular.module('eendragt.game.services.game', [])
                 var fields = [];
                 for (var i = 0; i < y; i++) {
                     for (var j = 0; j < x; j++) {
-                        fields.push({ status: true, x: j, y: i });
+                        fields.push({
+                            x: j,
+                            y: i,
+                            available: true,
+                            status: 'covered',
+                            ship: undefined
+                        });
                     }
                 }
                 return fields;
@@ -63,7 +69,7 @@ angular.module('eendragt.game.services.game', [])
                                         field = self.getField(x, y + i);
                                     }
 
-                                    if (field.status === false) {
+                                    if (field.available === false) {
                                         errors++;
                                     }
                                 }
@@ -77,12 +83,23 @@ angular.module('eendragt.game.services.game', [])
                                         } else {
                                             field = self.getField(x, y + i);
                                         }
-                                        field.status = false;
+                                        field.available = false;
                                     }
                                 }
                             }
                             self.addShip(Ship.create(x, y, ship.elements, direction, ship.name));
                         });
+
+                        angular.forEach(this.ships, function (ship) {
+                            var positions = ship.getPositions();
+                            angular.forEach(positions, function (position) {
+                                var field = self.getField(position.x, position.y);
+
+                                field.ship = ship;
+                            });
+
+                        });
+
                     }
                 };
             }
