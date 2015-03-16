@@ -1,5 +1,5 @@
 angular.module('eendragt.game.directives.map', [])
-    .directive('map', function (Ship) {
+    .directive('map', function (Ship, AI) {
         return {
             'scope': {
                 game: "="
@@ -8,6 +8,7 @@ angular.module('eendragt.game.directives.map', [])
             'restrict': 'E',
             link: function ($scope) {
                 var fields = [];
+
                 for (var i = 0; i < $scope.game.y; i++) {
                     if (fields[i] === undefined) {
                         fields[i] = [];
@@ -23,8 +24,12 @@ angular.module('eendragt.game.directives.map', [])
                         }
                     }
                 }
-
                 $scope.fields = fields;
+
+                $scope.aiGuess = function() {
+                    AI.guess();
+                };
+
             }
         };
     });

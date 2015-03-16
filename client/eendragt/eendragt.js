@@ -1,10 +1,10 @@
 angular.module('eendragt', [
-    'eendragt.config',
+    'eendragt.engine',
     'templates-app',
     'ngRoute',
     'ngAnimate',
     'LocalForageModule',
-    'eendragt.www',
+    'eendragt.home',
     'eendragt.instructions',
     'eendragt.game'
 ])

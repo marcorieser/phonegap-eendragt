@@ -10,28 +10,25 @@ angular.module('eendragt.game.services.game', [])
                 return fields;
             },
             getFieldNumber = function (length, x, y) {
-                var field = y * length + x;
-                return field;
+                return y * length + x;
             },
             getRandomCoord = function (size, length) {
-                var max = size - length + 1,
-                    rdm = (~~(Math.random() * max)),
-                    p = rdm;
-                return p;
+                var max = size - length + 1;
+                return (~~(Math.random() * max));
             };
 
         return {
             start: function (x, y) {
-                var game = {
-                    uuid:               Math.random().toString(9).substring(2, 12),
-                    ships:              [],
-                    x:                  x,
-                    y:                  y,
-                    availableFields:    setFields(x, y),
-                    addShip:            function (ship) {
+                return {
+                    uuid: Math.random().toString(9).substring(2, 12),
+                    ships: [],
+                    x: x,
+                    y: y,
+                    availableFields: setFields(x, y),
+                    addShip: function (ship) {
                         this.ships.push(ship);
                     },
-                    getField:           function (x, y) {
+                    getField: function (x, y) {
                         var field = getFieldNumber(this.x, x, y);
                         return this.availableFields[ field ];
                     },
@@ -42,7 +39,6 @@ angular.module('eendragt.game.services.game', [])
                             var x,
                                 y,
                                 direction,
-                                size,
                                 errors;
                             hasSpace = false;
                             while (!hasSpace) {
@@ -88,8 +84,6 @@ angular.module('eendragt.game.services.game', [])
                         });
                     }
                 };
-
-                return game;
             }
         };
     });
