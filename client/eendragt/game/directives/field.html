@@ -1,3 +1,3 @@
 <div ng-click="guess()" ng-class="status">
-    <ship ng-if="ship" x="x" y="y" ship="ship"></ship>
+    <ship ng-if="ship" ng-class="{hit:ship.getPosition(x, y).hit, destroyed: ship.isDestroyed()}" class="{{ship.name | lowercase}}"/>
 </div>

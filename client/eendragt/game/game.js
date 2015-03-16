@@ -40,5 +40,4 @@ angular.module('eendragt.game', [
         $scope.$root.controllerName = 'eendragt-game-play';
         $scope.game = Game.start(Config.fields.x, Config.fields.y);
         $scope.game.placeShipsRandomly(Config.ships);
-        console.log($scope.game);
     });

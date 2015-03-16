@@ -53,43 +53,41 @@
     }
 
     ship {
-        div {
-            position: absolute;
-            left: 0;
-            top: 0;
-            height: 100%;
-            width: 100%;
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 100%;
+        width: 100%;
 
-            &.terror {
-                background: #004c1d;
-            }
-            &.horror {
-                background: #00424c;
-            }
-            &.mckinsey {
-                background: #00204c;
-            }
-            &.dropplet {
-                background: #4c0029;
-            }
+        &.terror {
+            background: #004c1d;
+        }
+        &.horror {
+            background: #00424c;
+        }
+        &.mckinsey {
+            background: #00204c;
+        }
+        &.dropplet {
+            background: #4c0029;
+        }
 
-            &.hit {
-                &:before {
-                    content: '/';
-                    color: @color-white;
-                    font-size: 60px;
-                    display: block;
-                    text-align: center;
-                    width: 100%;
-                    position: absolute;
-                    left: 0;
-                    .vertical-center;
-                }
+        &.hit {
+            &:before {
+                content: '/';
+                color: @color-white;
+                font-size: 60px;
+                display: block;
+                text-align: center;
+                width: 100%;
+                position: absolute;
+                left: 0;
+                .vertical-center;
             }
-            &.destroyed {
-                &:before {
-                    content: 'X';
-                }
+        }
+        &.destroyed {
+            &:before {
+                content: 'X';
             }
         }
     }

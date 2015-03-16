@@ -22,15 +22,16 @@ angular.module('eendragt.game.services.game', [])
                 return {
                     uuid: Math.random().toString(9).substring(2, 12),
                     ships: [],
+                    fields: setFields(x, y),
                     x: x,
                     y: y,
-                    availableFields: setFields(x, y),
+
                     addShip: function (ship) {
                         this.ships.push(ship);
                     },
                     getField: function (x, y) {
                         var field = getFieldNumber(this.x, x, y);
-                        return this.availableFields[ field ];
+                        return this.fields[ field ];
                     },
                     placeShipsRandomly: function (ships) {
                         var self = this,
