@@ -4,18 +4,9 @@ angular.module('eendragt.game.directives.field', [])
             'scope': {
                 'x': '=',
                 'y': '=',
-                'ship': '=',
-                status: '='
+                'ship': '='
             },
             'templateUrl': 'eendragt/game/directives/field.html',
-            'restrict': 'E',
-            link: function ($scope) {
-                $scope.guess = function () {
-                    if ($scope.ship) {
-                        $scope.ship.hit($scope.x, $scope.y);
-                    }
-                    $scope.status = 'opened';
-                };
-            }
+            'restrict': 'E'
         };
     });

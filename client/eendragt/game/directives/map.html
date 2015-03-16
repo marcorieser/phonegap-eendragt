@@ -1,6 +1,6 @@
 <div class="eendragt-game-map">
     <div class="clearfix">
-        <field x="field.x" y="field.y" status="field.status" ship="field.ship" ng-repeat="field in game.fields"></field>
+        <field x="field.x" y="field.y" ship="field.ship" ng-class="field.status" ng-click="game.guess(field.x, field.y)" ng-repeat="field in game.fields"></field>
     </div>
 
     <!--<span ng-click="aiGuess()">AI Guess</span>-->

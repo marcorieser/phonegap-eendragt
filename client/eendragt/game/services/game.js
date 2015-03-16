@@ -100,6 +100,13 @@ angular.module('eendragt.game.services.game', [])
 
                         });
 
+                    },
+                    guess: function (x, y) {
+                        var field = this.getField(x, y);
+                        if (field.ship) {
+                            field.ship.hit(x, y);
+                        }
+                        field.status = 'opened';
                     }
                 };
             }
