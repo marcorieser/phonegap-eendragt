@@ -1,3 +1,3 @@
-.ng-scope {
+.ng-scope a {
     text-align: center;
 }
