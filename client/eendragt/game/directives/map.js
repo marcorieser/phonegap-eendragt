@@ -1,16 +1,14 @@
 angular.module('eendragt.game.directives.map', [])
-    .directive('map', function (Ship, AI) {
+    .directive('map', function ($rootScope) {
         return {
             'scope': {
-                game: "="
+                type: "@"
             },
             'templateUrl': 'eendragt/game/directives/map.html',
             'restrict': 'E',
             link: function ($scope) {
-                $scope.aiGuess = function() {
-                    AI.guess();
-                };
-
+                var game = $rootScope.gameHandler.getPlayer(0).game;
+                $scope.fields = $scope.type === 0 ? game.fields : game.guessFields;
             }
         };
     });

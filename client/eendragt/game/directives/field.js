@@ -7,6 +7,11 @@ angular.module('eendragt.game.directives.field', [])
                 'ship': '='
             },
             'templateUrl': 'eendragt/game/directives/field.html',
-            'restrict': 'E'
+            'restrict': 'E',
+            link: function ($scope) {
+                setTimeout(function () {
+                    console.log($scope.ship);
+                }, 1000);
+            }
         };
     });

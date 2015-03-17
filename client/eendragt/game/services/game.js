@@ -26,18 +26,21 @@ angular.module('eendragt.game.services.game', [])
         return {
             start: function (x, y) {
                 return {
-                    uuid: Math.random().toString(9).substring(2, 12),
                     ships: [],
                     fields: setFields(x, y),
+                    guessFields: setFields(x, y),
                     x: x,
                     y: y,
 
                     addShip: function (ship) {
                         this.ships.push(ship);
                     },
-                    getField: function (x, y) {
+                    getField: function (x, y, fields) {
                         var field = getFieldNumber(this.x, x, y);
-                        return this.fields[ field ];
+
+                        fields = fields || this.fields;
+
+                        return fields[ field ];
                     },
                     placeShipsRandomly: function (ships) {
                         var self = this,
@@ -94,15 +97,13 @@ angular.module('eendragt.game.services.game', [])
                             var positions = ship.getPositions();
                             angular.forEach(positions, function (position) {
                                 var field = self.getField(position.x, position.y);
-
                                 field.ship = ship;
                             });
-
                         });
 
                     },
                     guess: function (x, y) {
-                        var field = this.getField(x, y);
+                        var field = this.getField(x, y, this.guessFields);
                         if (field.ship) {
                             field.ship.hit(x, y);
                         }

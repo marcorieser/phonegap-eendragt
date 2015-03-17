@@ -36,8 +36,7 @@ angular.module('eendragt.game', [
         $scope.$root.controllerName = 'eendragt-game-online';
     })
 
-    .controller('eendragt.game.play', function ($scope, Game, Config) {
+    .controller('eendragt.game.play', function ($scope, $rootScope, GameHandler) {
         $scope.$root.controllerName = 'eendragt-game-play';
-        $scope.game = Game.start(Config.fields.x, Config.fields.y);
-        $scope.game.placeShipsRandomly(Config.ships);
+        $rootScope.gameHandler = GameHandler.getInstance();
     });
