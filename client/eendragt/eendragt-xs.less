@@ -20,6 +20,8 @@ body {
     min-height: 100%;
     overflow-y: scroll;
     -webkit-overflow-scrolling: touch;
+    background-image: url("images/background.svg");
+    background-size: 100% auto;
 }
 
 a {
@@ -33,30 +35,70 @@ a {
     }
 }
 
-.plank {
-    &.small {
-        background-image: url("images/plank-small.svg");
-    }
-    background: left top no-repeat;
-    .background-size(contain);
-    position: relative;
-    display: block;
-    line-height: 50px;
-    width: 20%;
-    //    .rotate(20deg);
+ul.nav {
 
-    &:before {
+    &:after {
         content: '';
-        display: block;
-        padding-top: 24.3735%;
+        display: inline-block;
+        position: relative;
+        width: 20%;
         height: 0;
     }
+}
 
-    span {
-        position: absolute;
-        .total-center;
+.plank {
+    background-image:url("images/plank-small.svg");
+    background-repeat:no-repeat;
+    background-size:100% auto;
+    display: block;
+    float: left;
+    width: 45%;
+    margin: 0 2.5%;
+
+    a {
+        height: 50px;
         color: @color-white;
+        display: block;
+        line-height: 50px;
+        text-align: center;
         font-size: 20px;
     }
+}
 
+.plank-2 {
+    background-image:url("images/plank-small.svg");
+    background-repeat:no-repeat;
+    background-size:100% auto;
+    display: block;
+    float: left;
+    width: 25%;
+    margin: 0 2.5%;
+}
+
+h1.ng-scope {
+    font-size: 3em;
+    margin: 100px 0 50px;
+    text-align: center;
+    font-family: MonAmourFraktur-Broken;
+    color: @color-yellow !important;
+}
+
+p.ng-scope {
+    text-align: center;
+    color: @color-yellow;
+    font-size: 1.85em;
+    line-height: 1.25em;
+
+}
+
+.ng-scope {
+    padding: 0 10px;
+}
+
+
+footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
 }
