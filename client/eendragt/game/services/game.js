@@ -1,5 +1,5 @@
 angular.module('eendragt.game.services.game', [])
-    .factory('Game', function (Ship) {
+    .factory('Game', function (Ship, $rootScope) {
         var setFields = function (x, y) {
                 var fields = [];
                 for (var i = 0; i < y; i++) {
@@ -98,6 +98,7 @@ angular.module('eendragt.game.services.game', [])
                             angular.forEach(positions, function (position) {
                                 var field = self.getField(position.x, position.y);
                                 field.ship = ship;
+                                field.status = 'opened';
                             });
                         });
 

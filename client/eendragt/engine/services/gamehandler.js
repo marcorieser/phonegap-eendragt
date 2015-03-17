@@ -22,7 +22,7 @@ angular.module('eendragt.engine.services.gamehandler', [])
                         this.player[ this.currentPlayer ].guess(x, y);
 
                         // If hit, guess again - else, switch player
-                        this.currentPlayer = this.currentPlayer === 0 ? 1 : 0;
+                        //this.currentPlayer = this.currentPlayer === 0 ? 1 : 0;
                     }
                 };
             }

@@ -4,14 +4,14 @@ angular.module('eendragt.game.directives.field', [])
             'scope': {
                 'x': '=',
                 'y': '=',
-                'ship': '='
+                'ship' : '='
             },
             'templateUrl': 'eendragt/game/directives/field.html',
             'restrict': 'E',
-            link: function ($scope) {
-                setTimeout(function () {
-                    console.log($scope.ship);
-                }, 1000);
+            link: function ($scope, element, attr) {
+                $scope.$eval('ship', function(value){
+                    console.log(value);
+                });
             }
         };
     });
