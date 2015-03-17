@@ -1,3 +1,4 @@
 .ng-scope a {
     text-align: center;
+    font-family: @font-face;
 }
