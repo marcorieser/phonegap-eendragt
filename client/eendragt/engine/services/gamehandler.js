@@ -22,11 +22,18 @@ angular.module('eendragt.engine.services.gamehandler', [])
                         var current = this.currentPlayer,
                             other = current === 0 ? 1 : 0,
                             guessResult = this.player[ other ].guess(x, y);
+                        if (guessResult === undefined) {
+                            return;
+                        }
 
                         this.player[ current ].setGuessFieldStatus(guessResult);
 
+                        if (guessResult.hit !== undefined) {
+                            return;
+                        }
+
                         // If hit, guess again - else, switch player
-                        //this.currentPlayer = this.currentPlayer === 0 ? 1 : 0;
+                        this.currentPlayer = other;
                     }
                 };
             }

@@ -98,7 +98,6 @@ angular.module('eendragt.game.services.game', [])
                             angular.forEach(positions, function (position) {
                                 var field = self.getField(position.x, position.y);
                                 field.ship = ship;
-                                field.status = 'opened';
                             });
                         });
 
@@ -111,6 +110,10 @@ angular.module('eendragt.game.services.game', [])
                                 positions: []
                             },
                             field = this.getField(x, y);
+
+                        if (field.status === 'opened') {
+                            return;
+                        }
 
                         if (field.ship) {
                             result.hit = field.ship.hit(x, y);

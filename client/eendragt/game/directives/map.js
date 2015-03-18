@@ -14,7 +14,11 @@ angular.module('eendragt.game.directives.map', [])
                 // Just temporary
                 $scope.player = gameHandler.currentPlayer;
 
+
                 $scope.guess = function (x, y) {
+                    if($scope.type === '0') {
+                        return;
+                    }
                     gameHandler.guess(x, y);
                 };
             }
