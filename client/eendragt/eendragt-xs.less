@@ -49,14 +49,18 @@ ul.nav {
 }
 
 .plank {
-    background-image:url("images/plank-small.svg");
+    background-image: url("images/plank-small.svg");
     background-repeat: no-repeat;
     background-size: 100% auto;
     display: block;
     float: left;
     height: 129px;
-    margin: 0 2.5%;
-    width: 45%;
+    left: 40px;
+    margin: 28px 2.5%;
+    position: relative;
+    top: 0;
+    transform: rotate(-15deg);
+    width: 55%;
 
     a {
         height: 50px;
@@ -69,39 +73,86 @@ ul.nav {
     }
 }
 
-.plank > span {
-    color: @color-white;
-}
 
-
-
-
-.plank-2 {
-    background-image:url("images/plank-small.svg");
-    background-repeat:no-repeat;
-    background-size:100% auto;
+.plank-small-deg {
+    background-image: url("images/plank-small-deg.svg");
+    background-repeat: no-repeat;
+    background-size: 100% auto;
     display: block;
     float: left;
-    width: 25%;
-    margin: 0 2.5%;
+    height: 129px;
+    margin: 50px -3.5% 0 -14px;
+    position: relative;
+    top: 0;
+    transform: rotate(45deg);
+    width: 30%;
 }
 
-h1.ng-scope {
-    font-size: 3em;
-    margin: 100px 0 50px;
+.plank-big-deg {
+    background-image: url("images/plank-small.svg");
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    display: block;
+    float: left;
+    height: 129px;
+    left: 40px;
+    margin: 28px 2.5%;
+    position: relative;
+    top: 0;
+    transform: rotate(-15deg);
+    width: 55%;
+}
+
+
+.plank.small.campaign {
+    position: relative;
+    transform: rotate(0deg);
+}
+
+.plank.small.online {
+    position: relative;
+    transform: rotate(0deg);
+}
+
+
+.title {
+    font-size: 4.5em;
     text-align: center;
     font-family: MonAmourFraktur-Broken;
     color: @color-yellow !important;
 }
 
-p.ng-scope {
+
+.game-infos p {
     text-align: center;
     color: @color-yellow;
     font-size: 1.85em;
     line-height: 1.25em;
 
+
 }
 
+.title-container {
+    text-align:center;
+    position: relative;
+    top: 100px;
+}
+
+.game-infos {
+    margin: 0 auto;
+    max-height: 445px;
+    overflow: auto;
+    position: relative;
+    top: 150px;
+    width: 80%;
+}
+
+.nav-title {
+    color: @color-white;
+    font-size: 2em;
+    position: relative;
+    top: 15px;
+}
 
 
 footer {
