@@ -32,7 +32,9 @@ a {
     &:active,
     &:focus {
         color: @color-gray;
+
     }
+    text-align: center;
 }
 
 ul.nav {
@@ -48,12 +50,13 @@ ul.nav {
 
 .plank {
     background-image:url("images/plank-small.svg");
-    background-repeat:no-repeat;
-    background-size:100% auto;
+    background-repeat: no-repeat;
+    background-size: 100% auto;
     display: block;
     float: left;
-    width: 45%;
+    height: 129px;
     margin: 0 2.5%;
+    width: 45%;
 
     a {
         height: 50px;
@@ -62,8 +65,16 @@ ul.nav {
         line-height: 50px;
         text-align: center;
         font-size: 20px;
+
     }
 }
+
+.plank > span {
+    color: @color-white;
+}
+
+
+
 
 .plank-2 {
     background-image:url("images/plank-small.svg");
@@ -91,9 +102,6 @@ p.ng-scope {
 
 }
 
-.ng-scope {
-    padding: 0 10px;
-}
 
 
 footer {
