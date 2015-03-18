@@ -22,6 +22,7 @@ body {
     -webkit-overflow-scrolling: touch;
     background-image: url("images/background.svg");
     background-size: 100% auto;
+    background-repeat: no-repeat;
 }
 
 a {
@@ -60,7 +61,7 @@ ul.nav {
     position: relative;
     top: 0;
     transform: rotate(-15deg);
-    width: 55%;
+    width: 45%;
 
     a {
         height: 50px;
@@ -105,18 +106,27 @@ ul.nav {
 
 
 .plank.small.campaign {
-    position: relative;
     transform: rotate(0deg);
+    position: relative;
+    top:100px;
+    float:none;
+    margin:0 auto;
+    left:0;
 }
 
 .plank.small.online {
     position: relative;
     transform: rotate(0deg);
+    float:none;
+    margin:0 auto;
+    left:0;
+    top:40px;
 }
 
 
 .title {
     font-size: 4.5em;
+    line-height: 0.9em;
     text-align: center;
     font-family: MonAmourFraktur-Broken;
     color: @color-yellow !important;
@@ -133,9 +143,11 @@ ul.nav {
 }
 
 .title-container {
-    text-align:center;
+    height: 150px;
     position: relative;
+    text-align: center;
     top: 100px;
+    width: 100%;
 }
 
 .game-infos {
@@ -151,8 +163,9 @@ ul.nav {
     color: @color-white;
     font-size: 2em;
     position: relative;
-    top: 15px;
+    top: 24px;
 }
+
 
 
 footer {
