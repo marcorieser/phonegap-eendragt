@@ -49,13 +49,37 @@ ul.nav {
     }
 }
 
+.logo {
+    display: block;
+    position: absolute;
+    bottom: 2.5%;
+    left: 2.5%;
+    background: url(images/logo.svg) left top no-repeat;
+    .background-size(100% auto);
+    .text-hide;
+    width: 60%;
+
+    &:before {
+        content: '';
+        display: block;
+        height: 0;
+        padding-top: 27.9395%;
+    }
+}
+
+
 .icon-sound {
     background-image: url("images/icon-sound.svg");
     background-repeat: no-repeat;
     background-size: 100% auto;
-    position: absolute;
-    top: 0;
-    right: 0;
+    cursor: pointer;
+    display: block;
+    float: right;
+    height: 229px;
+    position: relative;
+    right: 10px;
+    top: 10px;
+    width: 8%;
 
 }
 
@@ -94,7 +118,7 @@ ul.nav {
     height: 129px;
     margin: 50px -3.5% 0 -14px;
     position: relative;
-    top: 0;
+    top: -60px;
     transform: rotate(45deg);
     width: 30%;
 }
@@ -109,7 +133,7 @@ ul.nav {
     left: 40px;
     margin: 28px 2.5%;
     position: relative;
-    top: 0;
+    top: -60px;
     transform: rotate(-15deg);
     width: 55%;
 }
