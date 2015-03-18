@@ -22,6 +22,7 @@
         .clearfix {
             height: 100%;
             field {
+                cursor: pointer;
                 display: block;
                 width: percentage(1/@amount);
                 height: percentage(1/@amount);
@@ -33,7 +34,15 @@
                 }
 
                 &.opened {
-                    background: gray;
+                    background: #ddd;
+                }
+
+                &.hit {
+                    background: #666;
+                }
+
+                &.destroyed {
+                    background: #000;
                 }
             }
             &:nth-child(even) {
@@ -87,46 +96,4 @@
             }
         }
     }
-
-    //map {
-    //    -webkit-transform: rotateX(60deg) rotateZ(45deg);
-    //    -webkit-transform-style: preserve-3d;
-    //}
-
-    //
-    //ship > div,
-    //ship > div:after,
-    //ship > div:before {
-    //    content: '';
-    //    position: absolute;
-    //    float: left;
-    //    height: 100%;
-    //    width: 100%;
-    //}
-    //
-    //ship > div {
-    //    background-color: #f66;
-    //    position: relative;
-    //    -webkit-transform: translateZ(20px);
-    //    -webkit-transform-style: preserve-3d;
-    //    -webkit-transition: .25s;
-    //}
-    //
-    //ship > div:after {
-    //    left: 0;
-    //    top: 71%;
-    //    height: 20px;
-    //    background: inherit;
-    //    -webkit-transform: rotateX(-90deg) translateY(20px);
-    //    -webkit-transform-origin: 100% 100%;
-    //}
-    //
-    //ship > div:before {
-    //    left: 21%;
-    //    top: 0;
-    //    height: 20px;
-    //    background: inherit;
-    //    -webkit-transform: rotateY(90deg) rotateZ(-90deg) translateX(5px);
-    //    -webkit-transform-origin: 100% 100%;
-    //}
 }

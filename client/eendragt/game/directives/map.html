@@ -1,3 +1,4 @@
+<div ng-if="type === '0'" style="position: fixed; left: 20px;top: 20px; font-size: 20px; z-index: 20;">Current Player: {{player}}</div>
 <div class="eendragt-game-map clearfix">
     <field x="field.x" y="field.y" ship="field.ship" ng-class="field.status" ng-click="guess(field.x, field.y)" ng-repeat="field in fields"></field>
 </div>

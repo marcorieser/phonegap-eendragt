@@ -104,11 +104,41 @@ angular.module('eendragt.game.services.game', [])
 
                     },
                     guess: function (x, y) {
-                        var field = this.getField(x, y, this.guessFields);
+                        var result = {
+                                hit: undefined,
+                                destroyed: undefined,
+                                status: 'opened',
+                                positions: []
+                            },
+                            field = this.getField(x, y);
+
                         if (field.ship) {
-                            field.ship.hit(x, y);
+                            result.hit = field.ship.hit(x, y);
+                            result.destroyed = field.ship.isDestroyed();
+
+                            if (result.destroyed === true) {
+                                result.status = 'destroyed';
+                                angular.forEach(field.ship.getPositions(), function (position) {
+                                    result.positions.push({ x: position.x, y: position.y });
+                                });
+                            } else {
+                                result.status = 'hit';
+                                result.positions.push({ x: x, y: y });
+                            }
+                        } else {
+                            result.positions.push({ x: x, y: y });
                         }
+
                         field.status = 'opened';
+
+                        return result;
+                    },
+                    setGuessFieldStatus: function (fieldset) {
+                        var self = this;
+                        angular.forEach(fieldset.positions, function (position) {
+                            var field = self.getField(position.x, position.y, self.guessFields);
+                            field.status = fieldset.status;
+                        });
                     }
                 };
             }

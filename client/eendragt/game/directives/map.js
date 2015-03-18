@@ -11,6 +11,9 @@ angular.module('eendragt.game.directives.map', [])
                     game = gameHandler.getPlayer(0).game;
                 $scope.fields = $scope.type === '0' ? game.fields : game.guessFields;
 
+                // Just temporary
+                $scope.player = gameHandler.currentPlayer;
+
                 $scope.guess = function (x, y) {
                     gameHandler.guess(x, y);
                 };

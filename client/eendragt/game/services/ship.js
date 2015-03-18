@@ -32,10 +32,10 @@ angular.module('eendragt.game.services.ship', [])
                     },
 
                     getPosition: function (x, y) {
-                        var $value;
+                        var value;
 
                         angular.forEach(positions, function (position) {
-                            if ($value !== undefined) {
+                            if (value !== undefined) {
                                 return;
                             }
 
@@ -47,10 +47,10 @@ angular.module('eendragt.game.services.ship', [])
                                 return;
                             }
 
-                            $value = position;
+                            value = position;
                         });
 
-                        return $value;
+                        return value;
                     },
 
                     isOnPosition: function (x, y) {
@@ -58,39 +58,32 @@ angular.module('eendragt.game.services.ship', [])
                     },
 
                     isDestroyed: function () {
-                        var $destroyed = true;
+                        var destroyed = true;
 
                         angular.forEach(positions, function (position) {
-                            if ($destroyed === false) {
+                            if (destroyed === false) {
                                 return;
                             }
 
                             if (position.hit === false) {
-                                $destroyed = false;
+                                destroyed = false;
                             }
                         });
 
-                        this.destroyed = $destroyed;
+                        this.destroyed = destroyed;
 
-                        return $destroyed;
+                        return destroyed;
                     },
                     hit: function (x, y) {
-                        var position = this.getPosition(x, y);
+                        var position = this.getPosition(x, y),
+                            hit = false;
                         if (position !== undefined) {
                             position.hit = true;
+                            hit = true;
                         }
+                        return hit;
                     }
                 };
-            },
-            getShip: function (ships, x, y) {
-                var returnShip;
-                angular.forEach(ships, function (ship) {
-                    if (ship.isOnPosition(x, y)) {
-                        returnShip = ship;
-                    }
-                });
-
-                return returnShip;
             }
         };
     });

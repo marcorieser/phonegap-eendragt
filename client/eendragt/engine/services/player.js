@@ -12,7 +12,10 @@ angular.module('eendragt.engine.services.player', [])
                     uid: Math.random().toString(9).substring(2, 12),
                     game: game,
                     guess: function (x, y) {
-                        this.game.guess(x, y);
+                        return this.game.guess(x, y);
+                    },
+                    setGuessFieldStatus: function (guessResult) {
+                        this.game.setGuessFieldStatus(guessResult);
                     }
                 };
             }

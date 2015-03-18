@@ -15,11 +15,15 @@ angular.module('eendragt.engine.services.gamehandler', [])
                         getPlayer()
                     ],
                     currentPlayer: startPlayer,
-                    getPlayer: function(player) {
-                        return this.player[player];
+                    getPlayer: function (player) {
+                        return this.player[ player ];
                     },
                     guess: function (x, y) {
-                        this.player[ this.currentPlayer ].guess(x, y);
+                        var current = this.currentPlayer,
+                            other = current === 0 ? 1 : 0,
+                            guessResult = this.player[ other ].guess(x, y);
+
+                        this.player[ current ].setGuessFieldStatus(guessResult);
 
                         // If hit, guess again - else, switch player
                         //this.currentPlayer = this.currentPlayer === 0 ? 1 : 0;
