@@ -32,7 +32,6 @@ angular.module('eendragt.engine.services.gamehandler', [])
                             return;
                         }
 
-                        // If hit, guess again - else, switch player
                         this.currentPlayer = other;
                     }
                 };
