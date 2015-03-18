@@ -7,9 +7,13 @@ angular.module('eendragt.game.directives.map', [])
             'templateUrl': 'eendragt/game/directives/map.html',
             'restrict': 'E',
             link: function ($scope) {
-                var game = $rootScope.gameHandler.getPlayer(0).game;
-                $scope.game = game;
-                $scope.fields = $scope.type === 0 ? game.fields : game.guessFields;
+                var gameHandler = $rootScope.gameHandler,
+                    game = gameHandler.getPlayer(0).game;
+                $scope.fields = $scope.type === '0' ? game.fields : game.guessFields;
+
+                $scope.guess = function (x, y) {
+                    gameHandler.guess(x, y);
+                };
             }
         };
     });
