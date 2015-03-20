@@ -23,6 +23,7 @@ body {
     background-image: url("images/background.svg");
     background-size: 100% auto;
     background-repeat: no-repeat;
+    background-position: center bottom;
 }
 
 a {
@@ -57,7 +58,7 @@ ul.nav {
     background: url(images/logo.svg) left top no-repeat;
     .background-size(100% auto);
     .text-hide;
-    width: 60%;
+    width: 50%;
 
     &:before {
         content: '';
@@ -96,7 +97,7 @@ ul.nav {
     position: relative;
     top: 0;
     transform: rotate(-15deg);
-    width: 45%;
+    width: 36%;
 
     a {
         height: 50px;
@@ -110,6 +111,7 @@ ul.nav {
 }
 
 
+
 .plank-small-deg {
     background-image: url("images/plank-small-deg.svg");
     background-repeat: no-repeat;
@@ -118,10 +120,11 @@ ul.nav {
     float: left;
     height: 129px;
     margin: 50px -3.5% 0 -14px;
-    position: relative;
-    top: -60px;
+    position: fixed;
+    top: 42%;
     transform: rotate(45deg);
-    width: 30%;
+    width: 18%;
+    left: 53%;
 }
 
 .plank-big-deg {
@@ -131,78 +134,192 @@ ul.nav {
     display: block;
     float: left;
     height: 129px;
-    left: 40px;
+    left: 20%;
     margin: 28px 2.5%;
-    position: relative;
-    top: -60px;
+    position: fixed;
+    top: 42%;
     transform: rotate(-15deg);
-    width: 55%;
+    width: 30%;
 }
 
 
 .plank.small.campaign {
     transform: rotate(0deg);
-    position: relative;
-    top:100px;
-    float:none;
-    margin:0 auto;
-    left:0;
+    position: fixed;
+    top: 26%;
+    float: none;
+    left: 27%;
 }
 
 .plank.small.online {
-    position: relative;
+    position: fixed;
     transform: rotate(0deg);
-    float:none;
-    margin:0 auto;
-    left:0;
-    top:40px;
+    top: 47%;
+    float: none;
+    left: 27%;
 }
 
+.nav-title {
+    color: @color-white;
+    font-size: 3em;
+    position: relative;
+    top: 18%;
+    left: 25%;
+    font-weight: bold;
+}
+
+.game-infos p {
+    text-align: center;
+    color: @color-brown;
+    font-size: 1.85em;
+    line-height: 1.25em;
+}
+
+.game-infos {
+    margin: 0 auto;
+    overflow: auto;
+    position: fixed;
+    top: 30%;
+    width: 60%;
+    max-height: 135px;
+    left: 21%;
+}
 
 .title {
     font-size: 4.5em;
     line-height: 0.9em;
     text-align: center;
     font-family: MonAmourFraktur-Broken;
-    color: @color-yellow !important;
+    color: @color-brown !important;
 }
 
-
-.game-infos p {
-    text-align: center;
-    color: @color-yellow;
-    font-size: 1.85em;
-    line-height: 1.25em;
-
-
-}
 
 .title-container {
     height: 150px;
-    position: relative;
+    position: fixed;
     text-align: center;
-    top: 100px;
+    top: 9%;
     width: 100%;
 }
 
+.eendragt-instructions-index .main-wrapper {
+    position: relative;
+    min-height: 100%;
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
+    background-image: url("images/background.svg");
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+    background-position: center bottom;
+}
+
 .eendragt-instructions-index .title-container  {
-    height: 50px;
+    height: auto;
 }
 
-.eendragt-instructions-index .nav-title {
-    color: @color-white;
-    font-size: 3em;
-    left: 30%;
-    position: relative;
-    top: 28px;
+/*
+.eendragt-instructions-index .plank-small-deg {
+    background-image: url("images/plank-small-deg.svg");
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    display: block;
+    float: left;
+    height: 129px;
+    margin: 50px -3.5% 0 -14px;
+    position: fixed;
+    top: 42%;
+    transform: rotate(45deg);
+    width: 23%;
+    left: 53%;
+}
+*/
+
+.eendragt-instructions-index .plank-big-deg {
+    background-image: url("images/plank-small.svg");
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    display: block;
+    float: left;
+    height: 129px;
+    left: 66%;
+    margin: 28px 2.5%;
+    position: fixed;
+    top: 65%;
+    transform: rotate(-15deg);
+    width: 31%;
 }
 
-.eendragt-game-play .nav-title {
+
+.eendragt-game-campaign .plank-big-deg {
+    background-image: url("images/plank-small.svg");
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    display: block;
+    float: left;
+    height: 129px;
+    left: 51%;
+    margin: 28px 2.5%;
+    position: fixed;
+    top: 26%;
+    transform: rotate(-15deg);
+    width: 30%;
+}
+
+
+.eendragt-game-online .plank-big-deg {
+    background-image: url("images/plank-small.svg");
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    display: block;
+    float: left;
+    height: 129px;
+    left: 54%;
+    margin: 28px 2.5%;
+    position: fixed;
+    top: 63%;
+    transform: rotate(-15deg);
+    width: 30%;
+}
+
+.eendragt-game-campaign .plank-small-deg {
+    background-image: url("images/plank-small-deg.svg");
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    display: block;
+    float: left;
+    height: 129px;
+    margin: 50px -3.5% 0 -14px;
+    position: fixed;
+    top: 23%;
+    transform: rotate(45deg);
+    width: 19%;
+    left: 78%;
+}
+
+
+.eendragt-game-online .plank-small-deg {
+    background-image: url("images/plank-small-deg.svg");
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    display: block;
+    float: left;
+    height: 129px;
+    margin: 50px -3.5% 0 -14px;
+    position: fixed;
+    top: 60%;
+    transform: rotate(45deg);
+    width: 19%;
+    left: 80%;
+}
+
+
+
+.eendragt-game-index .nav-title {
     color: @color-white;
-    font-size: 3em;
-    left: 10%;
+    font-size: 2.5em;
+    left: 0;
     position: relative;
-    top: 28px;
+    top: 20%;
 }
 
 
@@ -210,43 +327,28 @@ ul.nav {
 .eendragt-game-online .nav-title {
     color: @color-white;
     font-size: 3em;
-    left: 40%;
+    left: 35%;
     position: relative;
-    top: 28px;
+    top: 16%;
+    font-weight: bold;
 }
 
 
-
-.game-infos {
-    margin: 0 auto;
-    max-height: 360px;
-    overflow: auto;
-    position: relative;
-    top: 150px;
-    width: 80%;
-}
-
-.nav-title {
-    color: @color-white;
-    font-size: 2em;
-    position: relative;
-    top: 24px;
-}
 
 .map-kaphoorn {
     background-image: url("images/kaphoorn-map.svg");
     background-position: center bottom;
     background-repeat: no-repeat;
     background-size: 100% auto;
-    height: 590px;
-    left: 28%;
+    height: 300px;
+    left: 7%;
     position: absolute;
     width: 75%;
 
 }
 
 .title-map {
-    color: #e9da5a !important;
+    color: @color-brown;
     font-family: MonAmourFraktur-Broken;
     font-size: 4.5em;
     left: 0;
@@ -256,6 +358,16 @@ ul.nav {
     top: 30px;
     width: 38%;
     z-index: 6;
+}
+
+
+.eendragt-instructions-index .nav-title {
+    color: @color-white;
+    font-size: 3em;
+    position: fixed;
+    top: 16%;
+    font-weight: bold;
+    left: 22%;
 }
 
 
