@@ -42,14 +42,6 @@
     width: 80%;
 }
 
-.nav-title {
-    color: @color-white;
-    font-size: 2em;
-    position: relative;
-    top: 24px;
-}
-
-
 .title {
     font-size: 4.5em;
     line-height: 0.9em;
@@ -66,4 +58,42 @@
     text-align: center;
     top: 100px;
     width: 100%;
+}
+
+.eendragt-instructions-index .plank-small-deg {
+    background-image: url("images/plank-small-deg.svg");
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    display: block;
+    float: left;
+    height: 129px;
+    margin: 50px -3.5% 0 -14px;
+    position: fixed;
+    top: 42%;
+    transform: rotate(45deg);
+    width: 23%;
+    left: 53%;
+}
+
+.eendragt-instructions-index .plank-big-deg {
+    background-image: url("images/plank-small.svg");
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    display: block;
+    float: left;
+    height: 129px;
+    left: 20%;
+    margin: 28px 2.5%;
+    position: fixed;
+    top: 42%;
+    transform: rotate(-15deg);
+    width: 36%;
+}
+
+.eendragt-instructions-index .nav-title {
+    color: @color-white;
+    font-size: 3em;
+    position: relative;
+    top: 18%;
+    font-weight: bold;
 }
