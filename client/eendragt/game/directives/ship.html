@@ -1,1 +1,1 @@
-<span ng-class="{hit:ship.getPosition(x, y).hit, destroyed: ship.isDestroyed()}" class="{{ship.name | lowercase}}-p{{ship.getPosition(x, y).id}}-{{ship.direction}}" ng-repeat="position in ship.positions"/>
+<span ng-class="{hit:position.hit, destroyed: ship.isDestroyed()}" class="{{ship.name | lowercase}}-p{{position.id}}-{{ship.direction}} x-{{position.x}} y-{{position.y}}" ng-repeat="position in ship.positions"/>
