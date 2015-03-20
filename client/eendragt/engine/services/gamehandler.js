@@ -32,7 +32,7 @@ angular.module('eendragt.engine.services.gamehandler', [])
                             return;
                         }
 
-                        this.currentPlayer = other;
+                        //this.currentPlayer = other;
                     }
                 };
             }

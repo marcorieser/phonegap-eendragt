@@ -1,5 +1,5 @@
 angular.module('eendragt.game.services.game', [])
-    .factory('Game', function (Ship, $rootScope) {
+    .factory('Game', function (Ship) {
         var setFields = function (x, y) {
                 var fields = [];
                 for (var i = 0; i < y; i++) {

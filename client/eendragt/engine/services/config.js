@@ -7,12 +7,11 @@ angular.module('eendragt.engine.services.config', [])
                 y: 9
             },
             ships: [
-                { name: 'Horror', elements: 4 },
-                { name: 'Horror', elements: 4 },
-                { name: 'McKinsey', elements: 3 },
-                { name: 'McKinsey', elements: 3 },
-                { name: 'Dropplet', elements: 2 },
-                { name: 'Dropplet', elements: 2 },
+                { name: 'master4', elements: 4 }/*,
+                { name: 'master3', elements: 3 },
+                { name: 'master3', elements: 3 },
+                { name: 'master2', elements: 2 },
+                { name: 'master2', elements: 2 }*/
             ]
         };
     });
