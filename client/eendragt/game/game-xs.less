@@ -3,10 +3,11 @@
     @amount: 9;
     map {
         display: block;
-        max-width: 50%;
+        max-width: 65%;
         //        margin: -5% auto;
         margin: 20px auto;
         position: relative;
+        .transform(rotateX(70deg) rotateZ(-45deg));
 
         &:before {
             content: '';
@@ -20,11 +21,6 @@
             left: 0;
             width: 100%;
             height: 100%;
-
-            -webkit-transform-style: preserve-3d;
-            -webkit-transform: rotateX(70deg) rotateZ(-45deg);
-            -moz-transform: rotateX(70deg) rotateZ(-45deg);
-            transform: rotateX(70deg) rotateZ(-45deg);
         }
         .clearfix {
             height: 100%;
@@ -34,9 +30,13 @@
                 height: percentage(1/@amount);
                 background: #8ce5fc;
                 float: left;
-                //                position: relative;
+                position: relative;
                 &:nth-child(even) {
                     background: #d3f6ff;
+                }
+
+                &.ship {
+//                    background: red;
                 }
 
                 &.opened {
@@ -62,126 +62,68 @@
     }
 
     ship {
-        span {
-            position: absolute;
-            left: 0;
-            top: 0;
-            height: 11.111111111%;
-            width: 11.111111111%;
+        position: absolute;
+        display: block;
+        left: 0;
+        top: 0;
+        height: 100%;
+        width: 100%;
 
-            &.x-1 {
-                left: 11.111111111%;
+        @transformation: rotateX(-70deg) rotateZ(13deg);
+
+        &[class*="master4"] {
+            background: left bottom no-repeat;
+            .background-size(contain);
+            height: auto;
+            &:before {
+                content: '';
+                padding-top: 297.948717949%;
+                display: block;
             }
+        }
 
-            &.x-2 {
-                left: 2 * 11.111111111%;
+        &.master4-p0-v {
+            background-image: url("images/ships/master4-p0-v.png");
+            .transform(@transformation translateY(-49.407728417%) translateX(-73.908045977%));
+        }
+
+        &.master4-p1-v {
+            background-image: url("images/ships/master4-p1-v.png");
+            .transform(@transformation translateY(-45.644451209%) translateX(-67.011494229%));
+        }
+        &.master4-p2-v {
+            background-image: url("images/ships/master4-p2-v.png");
+            .transform(@transformation translateY(-46.889264487%) translateX(-60.114942529%));
+        }
+        &.master4-p3-v {
+            background-image: url("images/ships/master4-p3-v.png");
+            .transform(@transformation translateY(-55.370656371%) translateX(-53.218390805%));
+        }
+
+        &[class*="master3"] {
+            background: #00424c;
+        }
+        &[class*="master2"] {
+            background: #4c0004;
+        }
+
+        &.hit {
+            &:before {
+                content: '/';
+                color: @color-white;
+                font-size: 60px;
+                display: block;
+                text-align: center;
+                width: 100%;
+                position: absolute;
+                left: 0;
+                .vertical-center;
             }
-
-//            @transformation: rotateX(-70deg) rotateZ(13deg);
-
-            &[class*="master4"] {
-                            background: left bottom no-repeat;
-                            background-size: contain;
-                            height: auto;
-//                background-color: lime;
-                //            background-image: none !important;
-                            &:before {
-                                content: '';
-                                padding-top: 297.948717949%;
-                                display: block;
-
-                            }
-            }
-
-                    &.master4-p0-v {
-                        background-image: url("images/ships/master4-p0-v.png");
-//                        transform:  @transformation translateY(-25.31120332%) translateX(-20.27027027%);
-                        display: none;
-                    }
-                    &.master4-p1-v {
-                        background-image: url("images/ships/master4-p1-v.png");
-//                        transform:  @transformation translateY(-21.161825726%) translateX(-13.513513514%);
-                        display: none;
-                    }
-                    &.master4-p2-v {
-                        background-image: url("images/ships/master4-p2-v.png");
-//                        transform:  @transformation translateY(-22.406639004%) translateX(-6.756756757%);
-                        display: none;
-                    }
-                    &.master4-p3-v {
-                        background-image: url("images/ships/master4-p3-v.png");
-//                        transform:  @transformation /*translateY(-280px) translateX(-152px)*/;
-//                        margin-top: -400px;
-//                        margin-left: 300px;
-                    }
-
-            &[class*="master3"] {
-                background: #00424c;
-            }
-            &[class*="master2"] {
-                background: #4c0004;
-            }
-
-            &.hit {
-                &:before {
-                    content: '/';
-                    color: @color-white;
-                    font-size: 60px;
-                    display: block;
-                    text-align: center;
-                    width: 100%;
-                    position: absolute;
-                    left: 0;
-                    .vertical-center;
-                }
-            }
-            &.destroyed {
-                &:before {
-                    content: 'X';
-                }
+        }
+        &.destroyed {
+            &:before {
+                content: 'X';
             }
         }
     }
-
-    //map {
-    //    -webkit-transform: rotateX(60deg) rotateZ(45deg);
-    //    -webkit-transform-style: preserve-3d;
-    //}
-
-    //
-    //ship > div,
-    //ship > div:after,
-    //ship > div:before {
-    //    content: '';
-    //    position: absolute;
-    //    float: left;
-    //    height: 100%;
-    //    width: 100%;
-    //}
-    //
-    //ship > div {
-    //    background-color: #f66;
-    //    position: relative;
-    //    -webkit-transform: translateZ(20px);
-    //    -webkit-transform-style: preserve-3d;
-    //    -webkit-transition: .25s;
-    //}
-    //
-    //ship > div:after {
-    //    left: 0;
-    //    top: 71%;
-    //    height: 20px;
-    //    background: inherit;
-    //    -webkit-transform: rotateX(-90deg) translateY(20px);
-    //    -webkit-transform-origin: 100% 100%;
-    //}
-    //
-    //ship > div:before {
-    //    left: 21%;
-    //    top: 0;
-    //    height: 20px;
-    //    background: inherit;
-    //    -webkit-transform: rotateY(90deg) rotateZ(-90deg) translateX(5px);
-    //    -webkit-transform-origin: 100% 100%;
-    //}
 }

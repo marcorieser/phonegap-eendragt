@@ -2,6 +2,7 @@ angular.module('eendragt.game.services.game', [])
     .factory('Game', function (Ship) {
         var setFields = function (x, y) {
                 var fields = [];
+
                 for (var i = 0; i < y; i++) {
                     for (var j = 0; j < x; j++) {
                         fields.push({

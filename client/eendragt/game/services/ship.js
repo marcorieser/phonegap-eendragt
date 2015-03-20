@@ -20,14 +20,15 @@ angular.module('eendragt.game.services.ship', [])
                 y = window.parseInt(y, 10);
                 elements = window.parseInt(elements, 10);
 
+                positions = setPositions();
+
                 return {
                     name: name,
                     direction: direction,
                     destroyed: false,
-                    positions: setPositions(),
 
                     getPositions: function () {
-                        return this.positions;
+                        return positions;
                     },
 
                     getPosition: function (x, y) {

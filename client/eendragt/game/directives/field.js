@@ -3,7 +3,8 @@ angular.module('eendragt.game.directives.field', [])
         return {
             'scope': {
                 'x': '=',
-                'y': '='
+                'y': '=',
+                'ship' : '='
             },
             'templateUrl': 'eendragt/game/directives/field.html',
             'restrict': 'E'
