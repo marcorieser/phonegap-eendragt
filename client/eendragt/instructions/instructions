@@ -1,0 +1,10 @@
+.eendragt-instructions-index .main-wrapper {
+    position: relative;
+    min-height: 100%;
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
+    background-image: url("images/background.svg");
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+    background-position: top;
+}
