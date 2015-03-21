@@ -3,10 +3,17 @@ angular.module('eendragt.engine.services.player', [])
     .factory('Player', function (Game, Config) {
         return {
             create: function () {
-                var game;
+                var game,
+                    startGame = function () {
+                        game = Game.start(Config.fields.x, Config.fields.y);
 
-                game = Game.start(Config.fields.x, Config.fields.y);
-                game.placeShipsRandomly(Config.ships);
+                    },
+                    placeShipsRandomly = function () {
+                        game.placeShipsRandomly(Config.ships);
+                    };
+
+                startGame();
+                placeShipsRandomly();
 
                 return {
                     uid: Math.random().toString(9).substring(2, 12),
@@ -16,6 +23,9 @@ angular.module('eendragt.engine.services.player', [])
                     },
                     setGuessFieldStatus: function (guessResult) {
                         this.game.setGuessFieldStatus(guessResult);
+                    },
+                    placeShipsRandomly: function () {
+                        this.game.placeShipsRandomly(Config.ships);
                     }
                 };
             }

@@ -16,6 +16,16 @@ angular.module('eendragt.game.services.game', [])
                 }
                 return fields;
             },
+            clearFields = function (fields) {
+                var i = 0;
+
+                for (i; i < fields.length; i++) {
+                    fields[ i ].available = true;
+                    fields[ i ].ship = undefined;
+                }
+
+                return fields;
+            },
             getFieldNumber = function (length, x, y) {
                 return y * length + x;
             },
@@ -46,6 +56,10 @@ angular.module('eendragt.game.services.game', [])
                     placeShipsRandomly: function (ships) {
                         var self = this,
                             hasSpace;
+
+                        this.fields = clearFields(this.fields);
+                        this.ships = [];
+
                         angular.forEach(ships, function (ship) {
                             var x,
                                 y,

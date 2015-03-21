@@ -33,6 +33,9 @@ angular.module('eendragt.engine.services.gamehandler', [])
                         }
 
                         //this.currentPlayer = other;
+                    },
+                    placeShipsRandomly: function () {
+                        this.player[0 ].placeShipsRandomly();
                     }
                 };
             }
