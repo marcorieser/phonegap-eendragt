@@ -11,7 +11,6 @@
         //        margin: -5% auto;
         margin: 20px auto;
         position: relative;
-        .transform(rotateX(70deg) rotateZ(-45deg));
 
         &:before {
             content: '';
@@ -25,8 +24,19 @@
             left: 0;
             width: 100%;
             height: 100%;
+            .transform(rotateX(70deg) rotateZ(-45deg));
+            z-index: 2;
+        }
+        .grid {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            .transform(rotateX(70deg) rotateZ(-45deg));
             background: url(images/grid.svg) center center no-repeat;
             .background-size(contain);
+            z-index: 1;
         }
         .clearfix {
             height: 100%;
@@ -40,7 +50,7 @@
                 .background-size(30% auto);
 
                 &.ship {
-                    background: red;
+//                    background: red;
                 }
 
                 &.opened {
@@ -61,22 +71,15 @@
         display: block;
         left: 0;
         top: 0;
-        height: 100%;
         width: 100%;
-
-        &[class*="master4"] {
-            background: left bottom no-repeat;
-            .background-size(contain);
-            height: auto;
-        }
+        background: left bottom no-repeat;
+        .background-size(contain);
 
         // 4 Master vertikal
 
-        @transformation: rotateX(-70deg) rotateZ(10deg);
-
         &.master4-p0-v {
             background-image: url("images/ships/master4-p0-v.png");
-            .transform(@transformation translateY(-45.161290323%) translateX(-79.787234043%));
+            .transform(rotateX(-70deg) rotateZ(10deg) translateY(-45.161290323%) translateX(-79.787234043%));
 
             &:before {
                 content: '';
@@ -87,7 +90,7 @@
 
         &.master4-p1-v {
             background-image: url("images/ships/master4-p1-v.png");
-            .transform(@transformation translateY(-43.010752688%) translateX(-71.276595729%));
+            .transform(rotateX(-70deg) rotateZ(10deg) translateY(-43.010752688%) translateX(-71.276595729%));
 
             &:before {
                 content: '';
@@ -97,7 +100,7 @@
         }
         &.master4-p2-v {
             background-image: url("images/ships/master4-p2-v.png");
-            .transform(@transformation translateY(-46.23655914%) translateX(-62.765957447%));
+            .transform(rotateX(-70deg) rotateZ(10deg) translateY(-46.23655914%) translateX(-62.765957447%));
 
             &:before {
                 content: '';
@@ -107,7 +110,7 @@
         }
         &.master4-p3-v {
             background-image: url("images/ships/master4-p3-v.png");
-            .transform(@transformation translateY(-56.272401434%) translateX(-55.319148936%));
+            .transform(rotateX(-70deg) rotateZ(10deg) translateY(-56.272401434%) translateX(-55.319148936%));
 
             &:before {
                 content: '';
@@ -119,11 +122,9 @@
 
         // 4 Master horizontal
 
-        @transformation: rotateX(-70deg) rotateZ(20deg);
-
         &.master4-p0-h {
             background-image: url("images/ships/master4-p0-h.png");
-            .transform(@transformation translateY(-182px) translateX(-140px));
+            .transform(rotateX(-70deg) rotateZ(20deg) translateY(-182px) translateX(-140px));
 
             &:before {
                 content: '';
@@ -134,7 +135,7 @@
 
         &.master4-p1-h {
             background-image: url("images/ships/master4-p1-h.png");
-            .transform(@transformation translateY(-150px) translateX(-135px));
+            .transform(rotateX(-70deg) rotateZ(20deg) translateY(-150px) translateX(-135px));
 
             &:before {
                 content: '';
@@ -144,7 +145,7 @@
         }
         &.master4-p2-h {
             background-image: url("images/ships/master4-p2-h.png");
-            .transform(@transformation translateY(-117px) translateX(-130px));
+            .transform(rotateX(-70deg) rotateZ(20deg) translateY(-117px) translateX(-130px));
 
             &:before {
                 content: '';
@@ -154,7 +155,7 @@
         }
         &.master4-p3-h {
             background-image: url("images/ships/master4-p3-h.png");
-            .transform(@transformation translateY(-85px) translateX(-125px));
+            .transform(rotateX(-70deg) rotateZ(20deg) translateY(-85px) translateX(-125px));
 
             &:before {
                 content: '';
@@ -163,9 +164,75 @@
             }
         }
 
-        &[class*="master3"] {
-            background: #00424c;
+
+        // 3 Master vertikal
+
+        &.master3-p0-v {
+            background-image: url("images/ships/master3-p0-v.png");
+            .transform(rotateX(-70deg) rotateZ(10deg) translateY(-29.716981132%) translateX(-58.064516129%));
+
+            &:before {
+                content: '';
+                padding-top: 227.777777778%;
+                display: block;
+            }
         }
+
+        &.master3-p1-v {
+            background-image: url("images/ships/master3-p1-v.png");
+            .transform(rotateX(-70deg) rotateZ(10deg) translateY(-42.924528302%) translateX(-49.462365591%));
+
+            &:before {
+                content: '';
+                padding-top: 227.777777778%;
+                display: block;
+            }
+        }
+        &.master3-p2-v {
+            background-image: url("images/ships/master3-p2-v.png");
+            .transform(rotateX(-70deg) rotateZ(10deg) translateY(-56.132075472%) translateX(-40.860215054%));
+
+            &:before {
+                content: '';
+                padding-top: 227.777777778%;
+                display: block;
+            }
+        }
+
+        // 3 Master horizontal
+
+        &.master3-p0-h {
+            background-image: url("images/ships/master3-p0-h.png");
+            .transform(rotateX(-70deg) rotateZ(20deg) translateY(-56.916996047%) translateX(-81.52173913%));
+
+            &:before {
+                content: '';
+                padding-top: 274.074074074%;
+                display: block;
+            }
+        }
+
+        &.master3-p1-h {
+            background-image: url("images/ships/master3-p1-h.png");
+            .transform(rotateX(-70deg) rotateZ(20deg) translateY(-44.268774704%) translateX(-76.086956522%));
+
+            &:before {
+                content: '';
+                padding-top: 274.074074074%;
+                display: block;
+            }
+        }
+        &.master3-p2-h {
+            background-image: url("images/ships/master3-p2-h.png");
+            .transform(rotateX(-70deg) rotateZ(20deg) translateY(-32.015810277%) translateX(-71.739130435%));
+
+            &:before {
+                content: '';
+                padding-top: 274.074074074%;
+                display: block;
+            }
+        }
+
         &[class*="master2"] {
             background: #4c0004;
         }
