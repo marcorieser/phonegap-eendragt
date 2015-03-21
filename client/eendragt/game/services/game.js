@@ -56,7 +56,8 @@ angular.module('eendragt.game.services.game', [])
                                 errors = 0;
                                 var i,
                                     field;
-                                direction = Math.random() > 0.5 ? 'h' : 'v';
+                                //direction = Math.random() > 0.5 ? 'h' : 'v';
+                                direction = 'h';
 
                                 if (direction === 'h') {
                                     x = getRandomCoord(self.x, ship.elements);

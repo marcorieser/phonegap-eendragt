@@ -52,9 +52,9 @@ ul.nav {
 
 .logo {
     display: block;
-    position: absolute;
-    bottom: 2.5%;
-    left: 2.5%;
+    position: fixed;
+    bottom: 1.5%;
+    left: 0.5%;
     background: url(images/logo.svg) left top no-repeat;
     .background-size(100% auto);
     .text-hide;
@@ -75,13 +75,17 @@ ul.nav {
     background-size: 100% auto;
     cursor: pointer;
     display: block;
-    float: right;
-    height: 229px;
-    position: relative;
-    right: 10px;
-    top: 10px;
-    width: 8%;
+    position: fixed;
+    right: 20px;
+    top: 20px;
+    width: 4%;
     z-index: 1;
+
+    &:before {
+        content: '';
+        display: block;
+        padding-top: 77.966101695%;
+    }
 
 }
 
