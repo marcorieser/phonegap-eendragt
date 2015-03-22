@@ -21,7 +21,7 @@ angular.module('eendragt.engine.services.gamehandler', [])
                     guess: function (x, y) {
                         var current = this.currentPlayer,
                             other = current === 0 ? 1 : 0,
-                            guessResult = this.player[ other ].guess(x, y);
+                            guessResult = this.player[ current ].guess(x, y);
                         if (guessResult === undefined) {
                             return;
                         }
