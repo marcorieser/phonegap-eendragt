@@ -1,0 +1,41 @@
+.eendragt-instructions-index {
+    .main-wrapper {
+        position: relative;
+        min-height: 100%;
+        overflow-y: scroll;
+        -webkit-overflow-scrolling: touch;
+        background-image: url("images/background.svg");
+        background-size: 100% auto;
+        background-repeat: no-repeat;
+        background-position: center bottom;
+    }
+
+    .title-container  {
+        height: auto;
+    }
+    .plank-big-deg {
+        background-image: url("images/plank-small.svg");
+        background-repeat: no-repeat;
+        background-size: 100% auto;
+        display: block;
+        float: left;
+        height: 129px;
+        left: 66%;
+        margin: 28px 2.5%;
+        position: fixed;
+        top: 65%;
+        transform: rotate(-15deg);
+        width: 31%;
+    }
+
+
+    .nav-title {
+        color: @color-white;
+        font-size: 3em;
+        position: fixed;
+        top: 16%;
+        font-weight: bold;
+        left: 22%;
+    }
+
+}
