@@ -47,7 +47,6 @@
 
             &.opened {
                 background-image: url(images/water-ripple.svg);
-                .transition(background 0.3s linear);
             }
 
         }
@@ -68,10 +67,13 @@
         &.map-1 {
             field {
                 &.hit {
-                    background: #666;
+                    background-image: url(images/cross.svg);
                 }
                 &.destroyed {
-                    background: #000;
+                    background-image: url(images/cross-horizontal.svg);
+                    &.v {
+                        background-image: url(images/cross-vertical.svg);
+                    }
                 }
             }
         }

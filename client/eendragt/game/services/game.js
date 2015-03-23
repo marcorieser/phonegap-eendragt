@@ -135,7 +135,7 @@ angular.module('eendragt.game.services.game', [])
                             result.destroyed = field.ship.isDestroyed();
 
                             if (result.destroyed === true) {
-                                result.status = 'destroyed';
+                                result.status = 'destroyed ' + field.ship.direction;
                                 angular.forEach(field.ship.getPositions(), function (position) {
                                     result.positions.push({ x: position.x, y: position.y });
                                 });
