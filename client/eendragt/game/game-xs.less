@@ -21,8 +21,8 @@
             position: absolute;
             top: 0;
             left: 0;
-            width: 100%;
-            height: 100%;
+            right: 0;
+            bottom: 0;
             z-index: 2;
         }
         .grid {
@@ -97,19 +97,39 @@
             &.p0 {
                 background-image: url("images/ships/master4-p0-v.png");
                 .transform(@transformation translateY(-45.161290323%) translateX(-79.787234043%));
+
+                &.destroyed {
+                    .transform(@transformation translateY(-54.16129%) translateX(-86.787234%));
+                    background-image: url("images/ships/wreck-2-v.png");
+                }
             }
             &.p1 {
                 background-image: url("images/ships/master4-p1-v.png");
                 .transform(@transformation translateY(-43.010752688%) translateX(-71.276595729%));
 
+                &.destroyed {
+                    .transform(@transformation translateY(-53.010753%) translateX(-80.276596%));
+                    background-image: url("images/ships/wreck-3-v.png");
+                }
+
             }
             &.p2 {
                 background-image: url("images/ships/master4-p2-v.png");
                 .transform(@transformation translateY(-46.23655914%) translateX(-62.765957447%));
+
+                &.destroyed {
+                    .transform(@transformation translateY(-54.236559%) translateX(-82.765957%));
+                    background-image: url("images/ships/wreck-1-v.png");
+                }
             }
             &.p3 {
                 background-image: url("images/ships/master4-p3-v.png");
                 .transform(@transformation translateY(-56.272401434%) translateX(-55.319148936%));
+
+                &.destroyed {
+                    .transform(@transformation translateY(-52.272401%) translateX(-81.319149%));
+                    background-image: url("images/ships/wreck-3-v.png");
+                }
             }
         }
 
@@ -123,20 +143,48 @@
                 display: block;
             }
             &.p0 {
-                background-image: url("images/ships/master4-p0-h.png");
                 .transform(@transformation translateY(-56.346749226%) translateX(-152.173913043%));
+                background-image: url("images/ships/master4-p0-h.png");
+                &.hit {
+                    background-image: url("images/ships/master4-p0-h-hit.png");
+                }
+                &.destroyed {
+                    .transform(@transformation translateY(-49.346749%) translateX(-121.173913%));
+                    background-image: url("images/ships/wreck-2-h.png");
+                }
             }
             &.p1 {
-                background-image: url("images/ships/master4-p1-h.png");
                 .transform(@transformation translateY(-46.439628483%) translateX(-146.739130435%));
+                background-image: url("images/ships/master4-p1-h.png");
+                &.hit {
+                    background-image: url("images/ships/master4-p1-h-hit.png");
+                }
+                &.destroyed {
+                    .transform(@transformation translateY(-49.439628%) translateX(-112.73913%));
+                    background-image: url("images/ships/wreck-3-h.png");
+                }
             }
             &.p2 {
-                background-image: url("images/ships/master4-p2-h.png");
                 .transform(@transformation translateY(-36.222910217%) translateX(-141.304347826%));
+                background-image: url("images/ships/master4-p2-h.png");
+                &.hit {
+                    background-image: url("images/ships/master4-p2-h-hit.png");
+                }
+                &.destroyed {
+                    .transform(@transformation translateY(-50.22291%) translateX(-111.304348%));
+                    background-image: url("images/ships/wreck-1-h.png");
+                }
             }
             &.p3 {
-                background-image: url("images/ships/master4-p3-h.png");
                 .transform(@transformation translateY(-26.315789474%) translateX(-135.869565217%));
+                background-image: url("images/ships/master4-p3-h.png");
+                &.hit {
+                    background-image: url("images/ships/master4-p3-h-hit.png");
+                }
+                &.destroyed {
+                    .transform(@transformation translateY(-49.315789%) translateX(-114.869565%));
+                    background-image: url("images/ships/wreck-3-h.png");
+                }
             }
         }
 
@@ -150,18 +198,32 @@
                 display: block;
             }
             &.p0 {
-                background-image: url("images/ships/master3-p0-v.png");
                 .transform(@transformation translateY(-29.716981132%) translateX(-58.064516129%));
+                background-image: url("images/ships/master3-p0-v.png");
+                &.destroyed {
+                    .transform(@transformation translateY(-50.716981%) translateX(-61.064516%));
+                    background-image: url("images/ships/wreck-1-v.png");
+                }
 
             }
 
             &.p1 {
-                background-image: url("images/ships/master3-p1-v.png");
                 .transform(@transformation translateY(-42.924528302%) translateX(-49.462365591%));
+                background-image: url("images/ships/master3-p1-v.png");
+
+                &.destroyed {
+                    .transform(@transformation translateY(-49.924528%) translateX(-62.462366%));
+                    background-image: url("images/ships/wreck-2-v.png");
+                }
             }
             &.p2 {
-                background-image: url("images/ships/master3-p2-v.png");
                 .transform(@transformation translateY(-56.132075472%) translateX(-40.860215054%));
+                background-image: url("images/ships/master3-p2-v.png");
+
+                &.destroyed {
+                    .transform(@transformation translateY(-48.132075%) translateX(-52.860215%));
+                    background-image: url("images/ships/wreck-1-v.png");
+                }
             }
         }
 
@@ -175,17 +237,32 @@
                 display: block;
             }
             &.p0 {
-                background-image: url("images/ships/master3-p0-h.png");
                 .transform(@transformation translateY(-56.52173913%) translateX(-80.434782609%));
+                background-image: url("images/ships/master3-p0-h.png");
+
+                &.destroyed {
+                    .transform(@transformation translateY(-46.521739%) translateX(-80.434782609%));
+                    background-image: url("images/ships/wreck-3-h.png");
+                }
             }
 
             &.p1 {
-                background-image: url("images/ships/master3-p1-h.png");
                 .transform(@transformation translateY(-44.268774704%) translateX(-76.086956522%));
+                background-image: url("images/ships/master3-p1-h.png");
+
+                &.destroyed {
+                    .transform(@transformation translateY(-48.268775%) translateX(-76.086956522%));
+                    background-image: url("images/ships/wreck-2-h.png");
+                }
             }
             &.p2 {
-                background-image: url("images/ships/master3-p2-h.png");
                 .transform(@transformation translateY(-32.015810277%) translateX(-71.739130435%));
+                background-image: url("images/ships/master3-p2-h.png");
+
+                &.destroyed {
+                    .transform(@transformation translateY(-49.01581%) translateX(-71.739130435%));
+                    background-image: url("images/ships/wreck-1-h.png");
+                }
             }
         }
 
@@ -199,14 +276,24 @@
                 display: block;
             }
             &.p0 {
-                background-image: url("images/ships/master2-p0-v.png");
                 .transform(@transformation translateY(-31.654676259%) translateX(-33.333333333%));
+                background-image: url("images/ships/master2-p0-v.png");
+
+                &.destroyed {
+                    .transform(@transformation translateY(-41.654676%) translateX(-36.333333%));
+                    background-image: url("images/ships/wreck-2-v.png");
+                }
 
             }
 
             &.p1 {
-                background-image: url("images/ships/master2-p1-v.png");
                 .transform(@transformation translateY(-48.920863309%) translateX(-25.641025641%));
+                background-image: url("images/ships/master2-p1-v.png");
+
+                &.destroyed {
+                    .transform(@transformation translateY(-44.920863%) translateX(-32.641026%));
+                    background-image: url("images/ships/wreck-1-v.png");
+                }
             }
         }
 
@@ -218,17 +305,28 @@
                 display: block;
             }
             &.p0 {
-                background-image: url("images/ships/master2-p0-h.png");
                 .transform(@transformation translateY(-47.272727273%) translateX(-76.923076923%));
+                background-image: url("images/ships/master2-p0-h.png");
+
+                &.destroyed {
+                    .transform(@transformation translateY(-44.272727%) translateX(-53.923077%));
+                    background-image: url("images/ships/wreck-2-h.png");
+                }
             }
 
             &.p1 {
-                background-image: url("images/ships/master2-p1-h.png");
                 .transform(@transformation translateY(-30.909090909%) translateX(-71.794871795%));
+                background-image: url("images/ships/master2-p1-h.png");
+
+                &.destroyed {
+                    .transform(@transformation translateY(-46.909091%) translateX(-51.794872%));
+                    background-image: url("images/ships/wreck-1-h.png");
+                }
             }
         }
 
         &.hit {
+            .transition(background 0.5s linear);
         }
         &.destroyed {
         }
