@@ -2,8 +2,9 @@ angular.module('eendragt.engine.services.player', [])
 
     .factory('Player', function (Game, Config) {
         return {
-            create: function () {
+            create: function (type) {
                 var game,
+                    ai,
                     startGame = function () {
                         game = Game.start(Config.fields.x, Config.fields.y);
 
@@ -11,6 +12,7 @@ angular.module('eendragt.engine.services.player', [])
                     placeShipsRandomly = function () {
                         game.placeShipsRandomly(Config.ships);
                     };
+
 
                 startGame();
                 placeShipsRandomly();

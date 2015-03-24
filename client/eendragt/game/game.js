@@ -38,5 +38,5 @@ angular.module('eendragt.game', [
 
     .controller('eendragt.game.play', function ($scope, $rootScope, GameHandler) {
         $scope.$root.controllerName = 'eendragt-game-play';
-        $rootScope.gameHandler = GameHandler.getInstance();
+        $rootScope.gameHandler = GameHandler.getInstance(0);
     });

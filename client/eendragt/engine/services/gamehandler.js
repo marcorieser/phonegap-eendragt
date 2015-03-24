@@ -1,6 +1,6 @@
 angular.module('eendragt.engine.services.gamehandler', [])
 
-    .factory('GameHandler', function (Player) {
+    .factory('GameHandler', function (Player, $rootScope, AI) {
         return {
             getInstance: function (startPlayer) {
                 var getPlayer = function () {
@@ -8,6 +8,8 @@ angular.module('eendragt.engine.services.gamehandler', [])
                 };
 
                 startPlayer = startPlayer || 0;
+
+                AI.create();
 
                 return {
                     player: [
@@ -21,21 +23,38 @@ angular.module('eendragt.engine.services.gamehandler', [])
                     guess: function (x, y) {
                         var current = this.currentPlayer,
                             other = current === 0 ? 1 : 0,
-                            guessResult = this.player[ current ].guess(x, y);
+                            guessResult = this.player[ other ].guess(x, y);
+
                         if (guessResult === undefined) {
+                            $rootScope.$broadcast('alreadyGuessed', {
+                                status: guessResult,
+                                x: x,
+                                y: y
+                            });
                             return;
                         }
 
                         this.player[ current ].setGuessFieldStatus(guessResult);
 
                         if (guessResult.hit !== undefined) {
+                            $rootScope.$broadcast('hit', {
+                                status: guessResult,
+                                x: x,
+                                y: y
+                            });
                             return;
                         }
 
-                        //this.currentPlayer = other;
+                        this.currentPlayer = other;
+                        
+                        $rootScope.$broadcast('userChanged', {
+                            status: guessResult,
+                            x: x,
+                            y: y
+                        });
                     },
                     placeShipsRandomly: function () {
-                        this.player[0 ].placeShipsRandomly();
+                        this.player[ 0 ].placeShipsRandomly();
                     }
                 };
             }
