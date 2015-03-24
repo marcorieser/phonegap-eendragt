@@ -1,3 +1,9 @@
+/**
+* _structure-mixins.less
+* This document includes all the functions (mixins), which are used in the other less documents.
+* @author Tamara Lütscher
+* @version 1.0 */
+
 // -------------------------------
 // Mixins
 // -------------------------------
@@ -6,6 +12,7 @@
 // -------------------------------
 
 // --- Clearfix ---
+// used to the parent element for the floats elements
 // wird auf das Elternelement floatender Elemente angewandt
 .clearfix() {
     &:before,
@@ -19,6 +26,7 @@
 }
 
 // --- Placeholder ---
+// set the color for placeholders in inputfields
 // Setzt die Farbe für die Placeholders in Inputfeldern
 .placeholder(@color) {
     &:-moz-placeholder {
@@ -35,12 +43,15 @@
     }
 }
 
+// --- Backgroundsize ---
+// set background-size for the images
 .background-size(@size: contain) {
     -webkit-background-size: @size;
     background-size: @size;
 }
 
 // --- Text overflow ---
+// cut textoverflow with 3 points
 // Schneidet den Text-Überfluss mit 3 Punkten ab
 .text-overflow() {
     overflow: hidden;
@@ -49,6 +60,7 @@
 }
 
 // --- Text Hide ---
+// hide text
 // Blendet Text aus
 .text-hide() {
     font: ~"0/0" a;
@@ -62,12 +74,14 @@
 // --------------------------------------------------
 
 // --- Text-shadow ---
+// set textshadow
 // Setzt einen Textschatten
 .text-shadow (@shadow: 0 1px 3px rgba(0, 0, 0, 0.25)) {
     text-shadow: @shadow;
 }
 
 // --- Box shadows ---
+// set shadow to an element
 // Setzt einen Schlagschatten auf ein Element
 .box-shadow(@shadow: 2px 2px 2px 2px rgba(0,0,0,0.5)) {
     -webkit-box-shadow: @shadow;
@@ -146,6 +160,7 @@
 ////////
 
 // --- Backface visibility ---
+// property for transitions and rotates, for example hide a back side
 // Eigenschaft um bei Transitions und Rotates zBsp. die Rückseite unsichtbar zu machen
 .backface-visibility(@visibility) {
     -webkit-backface-visibility: @visibility;
@@ -154,7 +169,8 @@
 }
 
 // --- Box sizing ---
-// Setzt das Box Model, nach welchem die Höhe und Breite der Elemnente berechnet werden
+// set box model, which calculate height and width from elements
+// Setzt das Box Model, nach welchem die Höhe und Breite der Elemente berechnet werden
 .box-sizing(@boxmodel) {
     -webkit-box-sizing: @boxmodel;
     -moz-box-sizing: @boxmodel;
@@ -162,6 +178,7 @@
 }
 
 // --- User select ---
+// defined if element be mark from a user
 // Definiert ob das Element markierbar durch den User ist
 .user-select(@select) {
     -webkit-user-select: @select;
@@ -172,6 +189,7 @@
 }
 
 // --- Columns ---
+// css text-columns layout
 // CSS Text-Spalten Layout
 .content-columns(@column-count, @column-gap: @grid-gutter-width) {
     -webkit-column-count: @column-count;
@@ -183,6 +201,7 @@
 }
 
 // --- Opacity ---
+// set opactiy-property incl. IE fallback
 // Setzt die Opacity Eigenschaft inkl. IE Fallback
 .opacity(@opacity) {
     opacity: @opacity;
@@ -191,6 +210,7 @@
 }
 
 // RGBA-Backgrounds
+// set the whole background-color-property incl. IE fallback
 // Setzt die gesamte background-color Eigenschaft inkl. IE Fallback
 .rgba-background(@color: #000, @alpha: 0.9) {
     @alphaColor: hsla(hue(@color), saturation(@color), lightness(@color), @alpha);
@@ -211,7 +231,7 @@
 
     background-color: @alphaColor;
 }
-
+// show visibility
 .responsive-visibility() {
     display: block !important;
     table& {
@@ -226,6 +246,7 @@
     }
 }
 
+// hide visibility
 .responsive-invisibility() {
     display: none !important;
 }
