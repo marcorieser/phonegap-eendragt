@@ -86,7 +86,7 @@ angular.module('eendragt.engine.services.ai', [])
                             return;
                         }
 
-                        if(event.name === 'alreadyGuessed') {
+                        if (event.name === 'alreadyGuessed') {
                             guess();
                             return;
                         }
@@ -102,12 +102,13 @@ angular.module('eendragt.engine.services.ai', [])
                         }
                         $timeout(function () {
                             guess();
-                        }, 1000);
+                        }, 700);
                     };
 
                 $rootScope.$on('userChanged', function (event, args) {
                     checkPlayer(event, args);
                 });
+
                 $rootScope.$on('alreadyGuessed', function (event, args) {
                     checkPlayer(event, args);
                 });

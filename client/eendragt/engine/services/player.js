@@ -2,9 +2,8 @@ angular.module('eendragt.engine.services.player', [])
 
     .factory('Player', function (Game, Config) {
         return {
-            create: function (type) {
+            create: function () {
                 var game,
-                    ai,
                     startGame = function () {
                         game = Game.start(Config.fields.x, Config.fields.y);
 
@@ -13,15 +12,24 @@ angular.module('eendragt.engine.services.player', [])
                         game.placeShipsRandomly(Config.ships);
                     };
 
-
                 startGame();
                 placeShipsRandomly();
 
                 return {
                     uid: Math.random().toString(9).substring(2, 12),
                     game: game,
+                    ships: Config.ships.length,
                     guess: function (x, y) {
-                        return this.game.guess(x, y);
+                        var guessResult = this.game.guess(x, y);
+
+                        if (guessResult !== undefined && guessResult.destroyed === true) {
+                            this.ships--;
+                            if (this.ships === 0) {
+                                guessResult.doomed = true;
+                            }
+                        }
+
+                        return guessResult;
                     },
                     setGuessFieldStatus: function (guessResult) {
                         this.game.setGuessFieldStatus(guessResult);

@@ -15,6 +15,9 @@ angular.module('eendragt.game.directives.map', [])
                     if($scope.type === '0') {
                         return;
                     }
+                    if(gameHandler.currentPlayer === 1) {
+                        return;
+                    }
                     gameHandler.guess(x, y);
                 };
             }

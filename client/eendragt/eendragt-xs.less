@@ -75,7 +75,6 @@ ul.nav {
     }
 }
 
-
 .icon-sound {
     background-image: url("images/icon-sound.svg");
     background-repeat: no-repeat;
@@ -151,23 +150,6 @@ ul.nav {
     width: 30%;
 }
 
-
-.plank.small.campaign {
-    .transform(rotate(0deg));
-    position: fixed;
-    top: 26%;
-    left: 9%;
-}
-
-
-.plank.small.online {
-    position: fixed;
-    .transform(rotate(0deg));
-    top: 26%;
-    margin-left: 46%;
-}
-
-
 .nav-title {
     color: @color-white;
     font-size: 3em;
@@ -177,8 +159,6 @@ ul.nav {
     font-weight: bold;
 }
 
-
-
 .title {
     font-size: 4.5em;
     line-height: 0.9em;
@@ -186,7 +166,6 @@ ul.nav {
     font-family: MonAmourFraktur-Broken;
     color: @color-yellow !important;
 }
-
 
 .title-container {
     height: 150px;
@@ -198,7 +177,7 @@ ul.nav {
 
 /* Kampagne */
 
-.eendragt-game-campaign .main-wrapper {
+.eendragt-game-index .main-wrapper {
     position: relative;
     min-height: 100%;
     overflow-y: scroll;
@@ -208,7 +187,8 @@ ul.nav {
     background-repeat: no-repeat;
     background-position: center;
 }
-.eendragt-game-campaign .plank-big-deg {
+
+.eendragt-game-index .plank-big-deg {
     background-image: url("images/plank-small.svg");
     background-repeat: no-repeat;
     background-size: 100% auto;
@@ -223,8 +203,7 @@ ul.nav {
     width: 30%;
 }
 
-
-.eendragt-game-campaign .plank-small-deg {
+.eendragt-game-index .plank-small-deg {
     background-image: url("images/plank-small-deg.svg");
     background-repeat: no-repeat;
     background-size: 100% auto;
@@ -239,16 +218,13 @@ ul.nav {
     left: 77%;
 }
 
-
-.eendragt-game-campaign .nav-title.back {
+.eendragt-game-index .nav-title.back {
     color: @color-white;
     font-size: 2em;
     left: 0;
     position: relative;
     top: 14%;
 }
-
-
 
 .map-kaphoorn {
     background-image: url("images/kaphoorn-map.svg");
@@ -276,54 +252,7 @@ ul.nav {
     z-index: 6;
 }
 
-/* Online */
-
-.eendragt-game-online .main-wrapper {
-    position: relative;
-    min-height: 100%;
-    overflow-y: scroll;
-    -webkit-overflow-scrolling: touch;
-    background-image: url("images/background.svg");
-    background-size: 100% auto;
-    background-repeat: no-repeat;
-    background-position: center;
-}
-
-
-.eendragt-game-online .plank-big-deg {
-    background-image: url("images/plank-small.svg");
-    background-repeat: no-repeat;
-    background-size: 100% auto;
-    display: block;
-    float: left;
-    height: 129px;
-    left: 54%;
-    margin: 28px 2.5%;
-    position: fixed;
-    top: 63%;
-    .transform(rotate(-15deg));
-    width: 30%;
-}
-
-.eendragt-game-online .plank-small-deg {
-    background-image: url("images/plank-small-deg.svg");
-    background-repeat: no-repeat;
-    background-size: 100% auto;
-    display: block;
-    float: left;
-    height: 129px;
-    margin: 50px -3.5% 0 -14px;
-    position: fixed;
-    top: 57%;
-    .transform(rotate(45deg));
-    width: 19%;
-    left: 79%;
-}
-
-.eendragt-game-online .nav-title.back,
-.eendragt-game-campaign .nav-title.back,
-.eendragt-game-index .nav-title.back
-{
+.eendragt-game-index .nav-title.back {
     color: @color-white;
     font-size: 2.2em;
     left: 0;
@@ -331,9 +260,6 @@ ul.nav {
     top: 11%;
 }
 
-
-.eendragt-game-online .nav-title,
-.eendragt-game-campaign .nav-title,
 .eendragt-game-index .nav-title {
     color: @color-white;
     font-size: 2.2em;
@@ -341,7 +267,6 @@ ul.nav {
     position: relative;
     top: 15%;
 }
-
 
 .eendragt-game-index .main-wrapper {
     position: relative;
@@ -360,7 +285,6 @@ ul.nav {
     .transform(rotate(38deg));
     left: 62%;
 }
-
 
 footer {
     position: absolute;

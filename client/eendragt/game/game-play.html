@@ -1,6 +1,9 @@
 <!--<div class="icon-sound"></div>-->
 <!--<a href="#!/" class="logo">Eendragt</a>-->
-<div style="position: fixed; left: 20px;top: 20px; font-size: 20px; z-index: 20;" ng-click="gameHandler.placeShipsRandomly()">Current Player: {{gameHandler.currentPlayer}}</div>
+<div style="position: fixed; left: 20px;top: 20px; font-size: 20px; z-index: 20;">Current Player: {{gameHandler.currentPlayer}}<br/>
+    My Ships: {{gameHandler.player[0].ships}}<br/>
+    Enemy Ships: {{gameHandler.player[1].ships}}
+</div>
 <map type="0" class="map-0" />
 <map type="1" class="map-1" />
 
