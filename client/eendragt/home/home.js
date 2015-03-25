@@ -5,7 +5,7 @@ angular.module('eendragt.home', [
     .config(function ($routeProvider) {
 
         $routeProvider.when('/', {
-            controller:  'eendragt.home.index',
+            controller: 'eendragt.home.index',
             templateUrl: 'eendragt/home/home-index.html'
         }).otherwise({ redirectTo: '/' });
     })

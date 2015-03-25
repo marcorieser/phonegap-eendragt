@@ -14,11 +14,27 @@
 
     @amount: 9;
     map {
-        display: block;
-        max-width: 65%;
-        margin: 0 auto;
-        position: relative;
+        &.ng-hide-add.ng-hide-add-active,
+        &.ng-hide-remove.ng-hide-remove-active {
+            .transition(all 0.3s linear);
+        }
 
+        &.ng-hide {
+            opacity: 0;
+            z-index: -1;
+        }
+
+        opacity: 1;
+        z-index: 1;
+        display: block;
+        width: 65%;
+        position: fixed;
+        .total-center;
+        
+        &.map-1 {
+            width: 50%;
+        }
+        
         &:before {
             content: '';
             display: block;

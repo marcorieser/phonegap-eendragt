@@ -102,7 +102,7 @@ angular.module('eendragt.engine.services.ai', [])
                         }
                         $timeout(function () {
                             guess();
-                        }, 700);
+                        }, 1000);
                     };
 
                 $rootScope.$on('userChanged', function (event, args) {

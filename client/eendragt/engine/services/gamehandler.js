@@ -1,6 +1,6 @@
 angular.module('eendragt.engine.services.gamehandler', [])
 
-    .factory('GameHandler', function (Player, $rootScope, $location, AI) {
+    .factory('GameHandler', function (Player, $rootScope, $location, AI, $timeout) {
         return {
             getInstance: function (startPlayer) {
                 var getPlayer = function () {
@@ -13,7 +13,6 @@ angular.module('eendragt.engine.services.gamehandler', [])
                 AI.create();
 
                 return {
-                    uid: Math.random().toString(9).substring(2, 12),
                     player: [
                         getPlayer(),
                         getPlayer()
@@ -23,7 +22,8 @@ angular.module('eendragt.engine.services.gamehandler', [])
                         return this.player[ player ];
                     },
                     guess: function (x, y) {
-                        var current = this.currentPlayer,
+                        var self = this,
+                            current = this.currentPlayer,
                             other = current === 0 ? 1 : 0,
                             guessResult = this.player[ other ].guess(x, y);
 
@@ -52,20 +52,21 @@ angular.module('eendragt.engine.services.gamehandler', [])
                             });
                             return;
                         }
+                        $timeout(function () {
+                            self.currentPlayer = other;
 
-                        this.currentPlayer = other;
-
-                        $rootScope.$broadcast('userChanged', {
-
-                            status: guessResult,
-                            x: x,
-                            y: y,
-                            uid: this.uid
-                        });
+                            $rootScope.$broadcast('userChanged', {
+                                status: guessResult,
+                                x: x,
+                                y: y
+                            });
+                        }, 1000);
                     },
+
                     placeShipsRandomly: function () {
                         this.player[ 0 ].placeShipsRandomly();
                     },
+
                     end: function (player) {
                         if (player === 0) {
                             $location.path('game/victory');

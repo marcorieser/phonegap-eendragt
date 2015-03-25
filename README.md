@@ -25,6 +25,8 @@ Plugins for the native functions on devices (not browser)
 --------------------------------------------------------
 # Remove plugins
 cordova plugin remove org.apache.cordova.statusbar
+cordova plugin remove de.neofonie.cordova.plugin.nativeaudio
 
 # Add plugins
 cordova plugin add org.apache.cordova.statusbar
+cordova plugin add https://github.com/SidneyS/cordova-plugin-nativeaudio.git
