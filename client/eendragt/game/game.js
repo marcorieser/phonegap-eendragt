@@ -7,8 +7,8 @@ angular.module('eendragt.game', [
     .config(function ($routeProvider) {
         $routeProvider
             .when('/game', {
-                controller: 'eendragt.game.index',
-                templateUrl: 'eendragt/game/game-index.html'
+                controller: 'eendragt.game.campaign',
+                templateUrl: 'eendragt/game/game-campaign.html'
             })
             .when('/game/campaign', {
                 controller: 'eendragt.game.campaign',

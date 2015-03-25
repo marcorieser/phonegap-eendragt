@@ -86,6 +86,11 @@ angular.module('eendragt.engine.services.ai', [])
                             return;
                         }
 
+                        if(event.name === 'alreadyGuessed') {
+                            guess();
+                            return;
+                        }
+
                         if (args.status !== undefined) {
                             if (args.status.destroyed === true) {
                                 lastHit = undefined;
@@ -95,9 +100,9 @@ angular.module('eendragt.engine.services.ai', [])
                                 getNeighbours();
                             }
                         }
-                        //$timeout(function () {
+                        $timeout(function () {
                             guess();
-                        //}, 1000);
+                        }, 1000);
                     };
 
                 $rootScope.$on('userChanged', function (event, args) {
