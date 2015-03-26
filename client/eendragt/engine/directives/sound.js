@@ -5,38 +5,49 @@ angular.module('eendragt.engine.directives.sound', [])
             'templateUrl': 'eendragt/engine/directives/sound.html',
             'restrict': 'E',
             link: function ($scope) {
-                var playBackground = function () {
-                        Sound.playBackground();
+                var sound = Sound.initialize(),
+                    playBackground = function () {
+                        sound.playBackground();
                     },
                     stopBackground = function () {
-                        //Sound.stopBackground();
+                        sound.stopBackground();
                     };
 
-                $scope.muted = false;
-                $scope.toggleSound = function () {
-                    var muted = $scope.muted ? false : true;
-                    $scope.muted = muted;
+                sound.isMute().then(function (status) {
+                    $scope.muted = status;
 
-                    if (muted === true) {
-                        stopBackground();
-                    } else {
-                        playBackground();
+                    $scope.toggleSound = function () {
+                        var muted = $scope.muted ? false : true;
+
+                        sound.setMute(muted);
+                        $scope.muted = muted;
+
+                        if (Config.phonegap === false) {
+                            return;
+                        }
+
+                        if (muted === true) {
+                            stopBackground();
+                        } else {
+                            playBackground();
+                        }
+                    };
+
+                    if (Config.phonegap === true) {
+
+                        document.addEventListener('deviceready', function () {
+                            sound.initializeBackground().then(function () {
+                                if ($scope.muted === false) {
+                                    playBackground();
+                                }
+                            });
+                            sound.initializeHit();
+                            sound.initializeShot();
+                            sound.initializeSplash();
+                        }, false);
                     }
-                };
 
-                if (Config.phonegap === true) {
-
-                    document.addEventListener('deviceready', function () {
-                        Sound.initializeBackground().then(function () {
-                            if ($scope.muted === false) {
-                                playBackground();
-                            }
-                        });
-                        Sound.initializeHit();
-                        Sound.initializeShot();
-                        Sound.initializeSplash();
-                    }, false);
-                }
+                });
             }
         };
     });
