@@ -13,3 +13,8 @@ angular.module('eendragt', [
     .config(function ($locationProvider) {
         $locationProvider.html5Mode(false).hashPrefix('!');
     });
+
+(function($) {
+    var width = $(window).width();
+    $('html').css('font-size', width/10);
+}(jQuery));
