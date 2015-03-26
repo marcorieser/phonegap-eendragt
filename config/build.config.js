@@ -70,7 +70,6 @@ module.exports = {
             '<%= src_dir %>/vendor/angular-animate/angular-animate.js',
             '<%= src_dir %>/vendor/localforage/dist/localforage.js',
             '<%= src_dir %>/vendor/angular-localForage/dist/angular-localForage.js',
-            '<%= src_dir %>/vendor/interact/interact.js',
             '<%= src_dir %>/vendor/ngCordova/dist/ng-cordova.js'
         ],
         css: [

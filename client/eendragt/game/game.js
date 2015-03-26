@@ -10,10 +10,6 @@ angular.module('eendragt.game', [
                 controller: 'eendragt.game.index',
                 templateUrl: 'eendragt/game/game-index.html'
             })
-            .when('/game/prepare', {
-                controller: 'eendragt.game.prepare',
-                templateUrl: 'eendragt/game/game-prepare.html'
-            })
             .when('/game/play', {
                 controller: 'eendragt.game.play',
                 templateUrl: 'eendragt/game/game-play.html'
@@ -30,19 +26,15 @@ angular.module('eendragt.game', [
             });
     })
 
-    .controller('eendragt.game.index', function ($scope) {
+    .controller('eendragt.game.index', function ($scope, $rootScope, GameHandler) {
         $scope.$root.controllerName = 'eendragt-game-index';
-    })
-
-    .controller('eendragt.game.prepare', function ($scope, $rootScope, GameHandler) {
-        $scope.$root.controllerName = 'eendragt-game-prepare';
         $rootScope.gameHandler = GameHandler.getInstance(0);
     })
 
     .controller('eendragt.game.play', function ($scope, $rootScope, $location) {
         $scope.$root.controllerName = 'eendragt-game-play';
         if ($rootScope.gameHandler === undefined) {
-            $location.path('/game/prepare');
+            $location.path('/game');
         }
     })
     .controller('eendragt.game.victory', function ($scope, $rootScope) {

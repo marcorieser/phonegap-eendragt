@@ -1,4 +1,5 @@
 angular.module('eendragt', [
+    'ngCordova',
     'eendragt.engine',
     'templates-app',
     'ngRoute',

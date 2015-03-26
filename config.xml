@@ -26,7 +26,6 @@
     <preference name="android-installLocation" value="auto"/>
     <preference name="DisallowOverscroll" value="true"/>
     <preference name="BackupWebStorage" value="local" />
-    <preference name="SplashScreenDelay" value="5000" />
 
     <gap:plugin name="de.appplant.cordova.plugin.hidden-statusbar-overlay"/>
     <gap:plugin name="org.apache.cordova.battery-status"/>

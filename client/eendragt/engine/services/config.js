@@ -15,6 +15,6 @@ angular.module('eendragt.engine.services.config', [])
                 { name: 'master2', elements: 2 },
                 { name: 'master2', elements: 2 }
             ],
-            phonegap: false
+            phonegap: true
         };
     });

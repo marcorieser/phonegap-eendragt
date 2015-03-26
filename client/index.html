@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns:ng="http://angularjs.org/" ng-app="eendragt">
+<html xmlns:ng="http://angularjs.org/" ng-app="eendragt" style="font-size: {{width/10}}px;">
 
 <head>
     <meta charset="utf-8">
@@ -11,14 +11,17 @@
     <link rel="shortcut icon" href="assets/images/favicon.ico" type="image/x-icon">
 
     <% styles.forEach( function ( file ) { %>
-    <link rel="stylesheet" type="text/css" href="<%= file %>" /><% }); %>
+    <link rel="stylesheet" type="text/css" href="<%= file %>"/>
+    <% }); %>
 </head>
 
 <body ng-cloak class="{{controllerName}}">
-
+<sound></sound>
 <div class="main-wrapper" ng-animate ng:view>
 </div>
 <% scripts.forEach( function ( file ) { %>
-<script type="text/javascript" src="<%= file %>"></script><% }); %>
+<script type="text/javascript" src="<%= file %>"></script>
+<% }); %>
+<!--<script type="text/javascript" src="cordova.js"></script>-->
 </body>
 </html>

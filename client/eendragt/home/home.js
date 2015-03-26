@@ -12,4 +12,5 @@ angular.module('eendragt.home', [
 
     .controller('eendragt.home.index', function ($scope) {
         $scope.$root.controllerName = 'eendragt-home-index';
+        $scope.$root.width = $(window).width();
     });
