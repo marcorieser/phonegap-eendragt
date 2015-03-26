@@ -5,8 +5,8 @@
 * @author Tamara Lütscher
 * @version 1.0 */
 
-.eendragt-game-play,
-.eendragt-game-index {
+.eendragt-game-index,
+.eendragt-game-play {
 
     .main-wrapper {
         background-position: center top;
@@ -27,12 +27,13 @@
         opacity: 1;
         z-index: 1;
         display: block;
-        width: 65%;
+        width: 70%;
         position: fixed;
-        .total-center;
+        .total-center(50%, 57%);
         
         &.map-1 {
             width: 50%;
+            .total-center(50%, 50%);
         }
         
         &:before {
@@ -424,4 +425,38 @@
         }
     }
 
+}
+.eendragt-game-index {
+    .plank-1 {
+        .transform(rotate(20deg));
+        left: 2%;
+        bottom: 12%;
+        width: 37%;
+        top: auto;
+    }
+    .plank-2 {
+        .transform(rotate(-20deg));
+        left: auto;
+        right: 2%;
+        bottom: 12%;
+        width: 37%;
+        top: auto;
+    }
+}
+.eendragt-game-play {
+    .plank-1 {
+        .transform(rotate(20deg));
+        left: 2%;
+        bottom: 12%;
+        width: 37%;
+        top: auto;
+    }
+    .plank-2 {
+        .transform(rotate(-20deg));
+        left: auto;
+        right: 2%;
+        bottom: 12%;
+        width: 37%;
+        top: auto;
+    }
 }

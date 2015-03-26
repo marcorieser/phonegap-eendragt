@@ -42,17 +42,6 @@ a {
     }
 }
 
-//ul.nav {
-//
-//    &:after {
-//        content: '';
-//        display: inline-block;
-//        position: relative;
-//        width: 20%;
-//        height: 0;
-//    }
-//}
-
 .logo {
     display: block;
     position: fixed;
@@ -105,6 +94,7 @@ sound {
     top: 0;
     left: 0;
     width: 36%;
+    z-index: 5;
 
     &:before {
         content: '';
@@ -123,6 +113,9 @@ sound {
 
     span {
         position: absolute;
+        display: block;
+        width: 80%;
+        text-align: center;
         .total-center;
         font-size: 0.3rem;
         line-height: 1em;
@@ -130,83 +123,4 @@ sound {
         color: @color-white;
 
     }
-}
-
-//.plank-small-deg {
-//    background-image: url("images/plank-small.svg");
-//    background-repeat: no-repeat;
-//    background-size: 100% auto;
-//    display: block;
-//    float: left;
-//    height: 129px;
-//    margin: 50px -3.5% 0 -14px;
-//    position: fixed;
-//    top: 42%;
-//    .transform(rotate(45deg));
-//    width: 18%;
-//    left: 53%;
-//}
-//
-//.plank-big-deg {
-//    background-image: url("images/plank.svg");
-//    background-repeat: no-repeat;
-//    background-size: 100% auto;
-//    display: block;
-//    float: left;
-//    height: 129px;
-//    left: 20%;
-//    margin: 28px 2.5%;
-//    position: fixed;
-//    top: 42%;
-//    .transform(rotate(-15deg));
-//    width: 30%;
-//}
-
-//.nav-title {
-//    font-size: 3em;
-//    position: relative;
-//    top: 18%;
-//    left: 25%;
-//    font-weight: bold;
-//}
-
-//.title {
-//    font-size: 4.5em;
-//    line-height: 0.9em;
-//    text-align: center;
-//    font-family: MonAmourFraktur-Broken;
-//    color: @color-yellow;
-//}
-
-//.title-container {
-//    height: 150px;
-//    position: fixed;
-//    text-align: center;
-//    top: 9%;
-//    width: 100%;
-//}
-
-//.eendragt-game-index .main-wrapper {
-//    position: relative;
-//    min-height: 100%;
-//    overflow-y: scroll;
-//    -webkit-overflow-scrolling: touch;
-//    background-image: url("images/background.svg");
-//    background-size: 100% auto;
-//    background-repeat: no-repeat;
-//    background-position: center 82%;
-//}
-//
-//.eendragt-game-index .plank-small-deg {
-//    position: fixed;
-//    top: 54%;
-//    .transform(rotate(38deg));
-//    left: 62%;
-//}
-
-footer {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
 }

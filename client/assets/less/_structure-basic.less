@@ -131,9 +131,9 @@
     }
 }
 
-.total-center() {
-    top: 50%;
-    left: 50%;
+.total-center(@x: 50%, @y: 50%) {
+    top: @y;
+    left: @x;
     .translate(-50%, -50%);
 }
 
