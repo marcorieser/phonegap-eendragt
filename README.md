@@ -21,6 +21,12 @@ grunt watch
 
 grunt
 
+Usage in Browser
+----------------
+- set phonegap to false in the config service
+- comment the cordova.js in the main index.html
+
+
 Plugins for the native functions on devices (not browser)
 --------------------------------------------------------
 # Remove plugins
