@@ -1,7 +1,7 @@
 /**
 * _structure-basic.less
 * This document includes all the basic elements, which are used for our game.
-* @author Tamara Lütscher
+* @author Marco Rieser
 * @version 1.0 */
 
 /* Helper Elements
@@ -19,55 +19,46 @@
 }
 
 // simple class for float the elements left
-// einfache Klasse um Elemente links zu floaten
 .pull-left {
     float: left !important;
 }
 
 // simple class for remove floats from elements
-// einfache Klasse um Elemente den das Floating zu entfernen
 .pull-none {
     float: none !important;
 }
 
 // simple class for text, which should be text-align left
-// einfache Klasse Text in Elementen links auszurichten
 .text-left {
     text-align: left;
 }
 
 // simple class for text, which should be text-align center
-// einfache Klasse Text in Elementen zentriert auszurichten
 .text-center {
     text-align: center;
 }
 
 // simple class for text, which should be text-align right
-// einfache Klasse Text in Elementen rechts auszurichten
 .text-right {
     text-align: right;
 }
 
 // simple class for elements to hide
-// einfache Klasse um Elemente nicht existent zu machen
 .hide {
     display: none !important;
 }
 
 // simple class for elements to show
-// einfache Klasse um Elemente existent zu machen
 .show {
     display: block !important;
 }
 
 // simple class for elements to set visibility hidden
-// einfache Klasse um Elemente unsichtbar zu machen
 .invisible {
     visibility: hidden;
 }
 
 // simple class for elements, to cut text-overflow with 3 points
-// einfache Klasse um Elemente den Textüberfluss mit 3 Punkten zu kürzen
 .text-overflow {
     .text-overflow();
 }
@@ -100,7 +91,6 @@
 }
 
 // simple class for elements to set proportion for responsive
-// einfache Klasse um Elemente in einem Verhältnis responsive zu machen
 .embed-responsive {
     position: relative;
     display: block;
@@ -154,7 +144,6 @@
 /* Box Model
 /* -------------------------- */
 // set box model on border-box
-// Setzt global das Box Model auf border-box
 *,
 *:before,
 *:after {
@@ -162,5 +151,4 @@
 }
 
 // fits stylesheets in (xs, ty, sm, md, lg)
-// Fügt die Stylesheets (xs,ty,sm,md,lg) ein
 .isstatic(@static);
