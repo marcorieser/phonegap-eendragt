@@ -5,12 +5,14 @@
 * @author Tamara Lütscher
 * @version 1.0 */
 
-.eendragt-game-index,
-.eendragt-game-play {
-
+[class^="eendragt-game-"] {
     .main-wrapper {
         background-position: center top;
     }
+}
+
+.eendragt-game-index,
+.eendragt-game-play {
 
     @amount: 9;
     map {
@@ -30,12 +32,12 @@
         width: 70%;
         position: fixed;
         .total-center(50%, 57%);
-        
+
         &.map-1 {
             width: 50%;
-            .total-center(50%, 50%);
+            .total-center(61%, 50%);
         }
-        
+
         &:before {
             content: '';
             display: block;
@@ -426,12 +428,18 @@
     }
 
 }
+
 .eendragt-game-index {
+    [class*="plank"] {
+        span {
+            font-size: 0.22rem;
+        }
+    }
     .plank-1 {
         .transform(rotate(20deg));
-        left: 2%;
-        bottom: 12%;
-        width: 37%;
+        left: 21%;
+        bottom: 8%;
+        width: 24%;
         top: auto;
     }
     .plank-2 {
@@ -439,24 +447,49 @@
         left: auto;
         right: 2%;
         bottom: 12%;
-        width: 37%;
+        width: 30%;
+        top: auto;
+    }
+    .plank-3 {
+        .transform(rotate(20deg));
+        left: 6.3%;
+        bottom: 21%;
+        width: 14%;
         top: auto;
     }
 }
+
 .eendragt-game-play {
+    [class*="plank"] {
+        z-index: 0;
+        span {
+            font-size: 0.22rem;
+        }
+    }
+
     .plank-1 {
-        .transform(rotate(20deg));
+        .transform(rotate(-20deg));
         left: 2%;
-        bottom: 12%;
-        width: 37%;
-        top: auto;
+        width: 28%;
+        top: 10%;
     }
     .plank-2 {
         .transform(rotate(-20deg));
-        left: auto;
-        right: 2%;
-        bottom: 12%;
-        width: 37%;
-        top: auto;
+        left: 4%;
+        width: 28%;
+        top: 25%;
     }
+
+    .plank-3 {
+        .transform(rotate(20deg));
+        left: 2%;
+        width: 28%;
+        top: auto;
+        bottom: 10%;
+
+        span {
+            font-size: 0.29rem;
+        }
+    }
+
 }
