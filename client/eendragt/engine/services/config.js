@@ -1,3 +1,9 @@
+/**
+* config.js
+* This file includes the config service module of the eendragt application.
+* @author Marco Rieser
+* @version 3.0 */
+
 angular.module('eendragt.engine.services.config', [])
 
     .factory('Config', function () {
