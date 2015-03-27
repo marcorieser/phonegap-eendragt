@@ -1,16 +1,16 @@
 angular.module('eendragt.engine.services.gamehandler', [])
 
-    .factory('GameHandler', function (Player, $rootScope, $location, AI, $timeout) {
+    .factory('GameHandler', function (Player, $rootScope, $location, AI, $timeout, Sound, Config) {
         return {
             getInstance: function (startPlayer) {
-                var getPlayer = function () {
-                    var player = angular.copy(Player);
-                    return player.create();
-                };
+                var sound = Sound.initialize(),
+                    ai = AI.create();
+                    getPlayer = function () {
+                        var player = angular.copy(Player);
+                        return player.create();
+                    };
 
                 startPlayer = startPlayer || 0;
-
-                AI.create();
 
                 return {
                     player: [
@@ -28,7 +28,7 @@ angular.module('eendragt.engine.services.gamehandler', [])
                             guessResult = this.player[ other ].guess(x, y);
 
                         if (guessResult === undefined) {
-                            $rootScope.$broadcast('alreadyGuessed', {
+                            ai.broadcast('alreadyGuessed', {
                                 status: guessResult,
                                 x: x,
                                 y: y
@@ -45,22 +45,28 @@ angular.module('eendragt.engine.services.gamehandler', [])
                         }
 
                         if (guessResult.hit !== undefined) {
-                            $rootScope.$broadcast('hit', {
+                            if (Config.phonegap) {
+                                sound.play('hit');
+                            }
+                            ai.broadcast('hit', {
                                 status: guessResult,
                                 x: x,
                                 y: y
                             });
                             return;
                         }
+                        if (Config.phonegap) {
+                            sound.play('splash');
+                        }
                         $timeout(function () {
                             self.currentPlayer = other;
 
-                            $rootScope.$broadcast('userChanged', {
+                            ai.broadcast('userChanged', {
                                 status: guessResult,
                                 x: x,
                                 y: y
                             });
-                        }, 1000);
+                        }, 1200);
                     },
 
                     placeShipsRandomly: function () {
@@ -69,11 +75,16 @@ angular.module('eendragt.engine.services.gamehandler', [])
 
                     end: function (player) {
                         if (player === 0) {
+                            if (Config.phonegap) {
+                                sound.play('victory');
+                            }
                             $location.path('game/victory');
 
                             return;
                         }
-
+                        if (Config.phonegap) {
+                            sound.play('doomed');
+                        }
                         $location.path('game/doomed');
                     }
                 };

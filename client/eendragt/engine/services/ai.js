@@ -102,19 +102,14 @@ angular.module('eendragt.engine.services.ai', [])
                         }
                         $timeout(function () {
                             guess();
-                        }, 1000);
+                        }, 1200);
                     };
 
-                $rootScope.$on('userChanged', function (event, args) {
-                    checkPlayer(event, args);
-                });
-
-                $rootScope.$on('alreadyGuessed', function (event, args) {
-                    checkPlayer(event, args);
-                });
-                $rootScope.$on('hit', function (event, args) {
-                    checkPlayer(event, args);
-                });
+                return {
+                    broadcast: function (event, args) {
+                        checkPlayer(event, args);
+                    }
+                };
             }
         };
     });

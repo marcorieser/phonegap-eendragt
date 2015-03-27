@@ -33,7 +33,7 @@ angular.module('eendragt.engine.directives.sound', [])
                         }
                     };
 
-                    if (Config.phonegap === true) {
+                    if (Config.phonegap) {
 
                         document.addEventListener('deviceready', function () {
                             sound.initializeBackground().then(function () {
@@ -41,9 +41,10 @@ angular.module('eendragt.engine.directives.sound', [])
                                     playBackground();
                                 }
                             });
-                            sound.initializeHit();
-                            sound.initializeShot();
-                            sound.initializeSplash();
+                            sound.initialize('hit');
+                            sound.initialize('splash');
+                            sound.initialize('victory');
+                            sound.initialize('doomed');
                         }, false);
                     }
 

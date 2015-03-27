@@ -37,13 +37,11 @@ angular.module('eendragt.game', [
             $location.path('/game');
         }
     })
-    .controller('eendragt.game.victory', function ($scope, $rootScope) {
+    .controller('eendragt.game.victory', function ($scope) {
         $scope.$root.controllerName = 'eendragt-game-victory';
-        $rootScope.gameHandler = undefined;
     })
-    .controller('eendragt.game.doomed', function ($scope, $rootScope) {
+    .controller('eendragt.game.doomed', function ($scope) {
         $scope.$root.controllerName = 'eendragt-game-doomed';
-        $rootScope.gameHandler = undefined;
     })
 
 ;
