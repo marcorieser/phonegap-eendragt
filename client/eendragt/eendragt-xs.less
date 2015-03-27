@@ -1,9 +1,8 @@
 /**
 * eendragt-xs.less
-* This document includes the styling for the different screen in extra small modus.
-* We worked first with this document, all styles, which are different to the screen-size, are in the other documents (tiny and middle).
-* @author Tamara Lütscher
-* @version 1.0 */
+* This document includes the styling for the different screen in extra small modus and inherits up to larger screens.
+* @author Tamara Lütscher, Marco Rieser
+* @version 8.0 */
 
 html {
     height: 100%;
@@ -20,13 +19,15 @@ body {
     line-height: 1.2em;
     color: @color-gray;
 }
+
 .wrapper {
     height: 100%;
 }
+
 .main-wrapper {
     height: 100%;
     position: relative;
-    overflow-y: scroll;
+    overflow-y: auto;
     -webkit-overflow-scrolling: touch;
     background: url("images/background.svg") no-repeat center bottom;
     .background-size(cover);
@@ -135,6 +136,7 @@ sound {
 
     }
 }
+
 imagepreloader {
     position: absolute;
     overflow: hidden;

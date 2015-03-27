@@ -1,9 +1,8 @@
 /**
 * instructions-xs.less
-* This document includes the styling for the instruction screen in extra small modus.
-* We worked first with this document, all styles, which are different to the screen-size, are in the other documents (tiny, small, middle and large).
-* @author Tamara Lütscher
-* @version 1.0 */
+* This document includes the styling for the different screen in extra small modus and inherits up to larger screens.
+* @author Tamara Lütscher, Marco Rieser
+* @version 3.0 */
 
 .eendragt-instructions-index {
     .main-wrapper {
@@ -26,7 +25,7 @@
     }
 
     .game-infos p {
-        color: @color-white;
+        color: @color-brown;
         font-size: .32rem;
         line-height: 1.25em;
         margin-bottom: 4%;
@@ -38,8 +37,8 @@
         left: 0;
         width: 65%;
         bottom: 0;
-        background: -webkit-linear-gradient(left, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0.1) 100%);
-        background: linear-gradient(to right, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0.1) 100%);
+        background: -webkit-linear-gradient(left, rgba(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, 0.2) 100%);
+        background: linear-gradient(to right, rgba(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, 0.2) 100%);
 
         .inner {
             position: absolute;
@@ -47,7 +46,7 @@
             left: 6%;
             bottom: 3%;
             right: 3%;
-            overflow-y: scroll;
+            overflow-y: auto;
             -webkit-overflow-scrolling: touch;
         }
     }
