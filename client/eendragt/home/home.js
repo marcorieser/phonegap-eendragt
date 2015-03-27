@@ -10,6 +10,4 @@ angular.module('eendragt.home', [
         }).otherwise({ redirectTo: '/' });
     })
 
-    .controller('eendragt.home.index', function ($scope) {
-        $scope.$root.controllerName = 'eendragt-home-index';
-    });
+    .controller('eendragt.home.index', function () {});

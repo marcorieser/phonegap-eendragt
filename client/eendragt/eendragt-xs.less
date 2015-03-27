@@ -20,7 +20,9 @@ body {
     line-height: 1.2em;
     color: @color-gray;
 }
-
+.wrapper {
+    height: 100%;
+}
 .main-wrapper {
     height: 100%;
     position: relative;
@@ -28,6 +30,15 @@ body {
     -webkit-overflow-scrolling: touch;
     background: url("images/background.svg") no-repeat center bottom;
     .background-size(cover);
+
+    &.ng-hide-add.ng-hide-add-active,
+    &.ng-hide-remove.ng-hide-remove-active {
+        .transition(all 0.3s linear);
+    }
+
+    &.ng-hide {
+        opacity: 0;
+    }
 }
 
 a {

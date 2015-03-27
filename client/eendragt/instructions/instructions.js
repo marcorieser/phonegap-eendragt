@@ -9,6 +9,4 @@ angular.module('eendragt.instructions', [
         });
     })
 
-    .controller('eendragt.instructions.index', function ($scope) {
-        $scope.$root.controllerName = 'eendragt-instructions-index';
-    });
+    .controller('eendragt.instructions.index', function () {});

@@ -1,8 +1,10 @@
-<span class="plank-1"><span>Meine Schiffe: {{gameHandler.player[0].ships}}</span></span>
-<span class="plank-2"><span>Gegnerische Schiffe: {{gameHandler.player[1].ships}}</span></span>
+<div class="main-wrapper eendragt-game-play">
+    <span class="plank-1"><span>Meine Schiffe: {{gameHandler.player[0].ships}}</span></span>
+    <span class="plank-2"><span>Gegnerische Schiffe: {{gameHandler.player[1].ships}}</span></span>
 <span class="plank-3 small">
     <span ng-show="gameHandler.currentPlayer === 0">Dein Zug</span>
     <span ng-show="gameHandler.currentPlayer === 1">Gegners Zug</span>
 </span>
-<map type="0" class="map-0" ng-show="gameHandler.currentPlayer === 1"/>
-<map type="1" class="map-1" ng-show="gameHandler.currentPlayer === 0"/>
+    <map type="0" class="map-0" ng-show="gameHandler.currentPlayer === 1"/>
+    <map type="1" class="map-1" ng-show="gameHandler.currentPlayer === 0"/>
+</div>

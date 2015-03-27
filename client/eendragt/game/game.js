@@ -26,22 +26,18 @@ angular.module('eendragt.game', [
             });
     })
 
-    .controller('eendragt.game.index', function ($scope, $rootScope, GameHandler) {
-        $scope.$root.controllerName = 'eendragt-game-index';
+    .controller('eendragt.game.index', function ($rootScope, GameHandler) {
         $rootScope.gameHandler = GameHandler.getInstance(0);
     })
 
-    .controller('eendragt.game.play', function ($scope, $rootScope, $location) {
-        $scope.$root.controllerName = 'eendragt-game-play';
+    .controller('eendragt.game.play', function ($rootScope, $location) {
         if ($rootScope.gameHandler === undefined) {
             $location.path('/game');
         }
     })
-    .controller('eendragt.game.victory', function ($scope) {
-        $scope.$root.controllerName = 'eendragt-game-victory';
-    })
-    .controller('eendragt.game.doomed', function ($scope) {
-        $scope.$root.controllerName = 'eendragt-game-doomed';
+
+    .controller('eendragt.game.victory', function () {
     })
 
-;
+    .controller('eendragt.game.doomed', function () {
+    });
