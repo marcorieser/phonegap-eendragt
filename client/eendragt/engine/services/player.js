@@ -58,7 +58,7 @@ angular.module('eendragt.engine.services.player', [])
 
                             // If no ships are left the player looses
                             //if (this.ships === 0) {
-                            if (this.ships < Config.ships.length) {
+                            if (this.ships < 5) {
                                 guessResult.doomed = true;
                             }
                         }
